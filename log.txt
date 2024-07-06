@@ -21502,3 +21502,937 @@
 2024-06-03 16:24:47,556 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
 2024-06-03 16:24:47,572 INFO Exiting gracefully...
 2024-06-03 16:24:50,229 INFO Exiting gracefully...
+2024-07-01 23:31:27,490 INFO Starting fetch_and_update_data
+2024-07-01 23:31:27,490 DEBUG Fetching and updating data
+2024-07-01 23:31:27,490 DEBUG Establishing database connection
+2024-07-01 23:31:27,776 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-01 23:31:34,953 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-01 23:31:34,953 INFO Total Scan Count: 24, Previous Day Scan Count: 0, Scan Count: 24, Day of Week: Monday
+2024-07-01 23:31:34,953 DEBUG Establishing database connection
+2024-07-01 23:31:35,006 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-01 23:31:35,022 INFO Starting Flask app
+2024-07-01 23:31:35,191 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:7777
+2024-07-01 23:31:35,191 INFO [33mPress CTRL+C to quit[0m
+2024-07-01 23:31:35,208 INFO  * Restarting with stat
+2024-07-01 23:31:38,167 INFO Starting fetch_and_update_data
+2024-07-01 23:31:38,167 DEBUG Fetching and updating data
+2024-07-01 23:31:38,167 DEBUG Establishing database connection
+2024-07-01 23:31:38,267 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-01 23:31:38,283 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-01 23:31:38,283 INFO Total Scan Count: 24, Previous Day Scan Count: 0, Scan Count: 24, Day of Week: Monday
+2024-07-01 23:31:38,283 DEBUG Establishing database connection
+2024-07-01 23:31:38,299 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-01 23:31:38,299 INFO Starting Flask app
+2024-07-01 23:31:38,314 WARNING  * Debugger is active!
+2024-07-01 23:31:38,321 INFO  * Debugger PIN: 705-887-496
+2024-07-01 23:32:35,039 DEBUG Fetching and updating data
+2024-07-01 23:32:35,039 DEBUG Establishing database connection
+2024-07-01 23:32:35,039 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-01 23:32:35,039 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-01 23:32:35,039 INFO Total Scan Count: 25, Previous Day Scan Count: 0, Scan Count: 25, Day of Week: Monday
+2024-07-01 23:32:35,039 DEBUG Establishing database connection
+2024-07-01 23:32:35,117 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-01 23:32:38,324 DEBUG Fetching and updating data
+2024-07-01 23:32:38,324 DEBUG Establishing database connection
+2024-07-01 23:32:38,324 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-01 23:32:38,339 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-01 23:32:38,339 INFO Total Scan Count: 25, Previous Day Scan Count: 0, Scan Count: 25, Day of Week: Monday
+2024-07-01 23:32:38,339 DEBUG Establishing database connection
+2024-07-01 23:32:38,355 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-01 23:33:35,145 DEBUG Fetching and updating data
+2024-07-01 23:33:35,145 DEBUG Establishing database connection
+2024-07-01 23:33:35,145 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-01 23:33:35,363 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-01 23:33:35,363 INFO Total Scan Count: 25, Previous Day Scan Count: 0, Scan Count: 25, Day of Week: Monday
+2024-07-01 23:33:35,363 DEBUG Establishing database connection
+2024-07-01 23:33:35,379 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-01 23:33:35,782 INFO Rendering index page
+2024-07-01 23:33:35,782 DEBUG Establishing database connection
+2024-07-01 23:33:35,782 INFO Fetched data with query: SELECT DayOfWeek, ScanCount, PreviousWeekScanCount FROM WebHit
+2024-07-01 23:33:38,382 DEBUG Fetching and updating data
+2024-07-01 23:33:38,382 DEBUG Establishing database connection
+2024-07-01 23:33:38,385 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-01 23:33:38,389 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-01 23:33:38,405 INFO Total Scan Count: 25, Previous Day Scan Count: 0, Scan Count: 25, Day of Week: Monday
+2024-07-01 23:33:38,405 DEBUG Establishing database connection
+2024-07-01 23:33:38,421 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-01 23:33:48,452 INFO Plot created and saved to templates/plot.html
+2024-07-01 23:33:50,254 INFO 127.0.0.1 - - [01/Jul/2024 23:33:50] "GET /plot HTTP/1.1" 200 -
+2024-07-01 23:34:35,398 DEBUG Fetching and updating data
+2024-07-01 23:34:35,398 DEBUG Establishing database connection
+2024-07-01 23:34:35,398 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-01 23:34:35,406 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-01 23:34:35,406 INFO Total Scan Count: 25, Previous Day Scan Count: 0, Scan Count: 25, Day of Week: Monday
+2024-07-01 23:34:35,406 DEBUG Establishing database connection
+2024-07-01 23:34:35,422 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-01 23:34:38,449 DEBUG Fetching and updating data
+2024-07-01 23:34:38,449 DEBUG Establishing database connection
+2024-07-01 23:34:38,449 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-01 23:34:38,480 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-01 23:34:38,480 INFO Total Scan Count: 26, Previous Day Scan Count: 0, Scan Count: 26, Day of Week: Monday
+2024-07-01 23:34:38,480 DEBUG Establishing database connection
+2024-07-01 23:34:38,480 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-01 23:35:35,476 DEBUG Fetching and updating data
+2024-07-01 23:35:35,476 DEBUG Establishing database connection
+2024-07-01 23:35:35,476 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-01 23:35:35,476 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-01 23:35:35,476 INFO Total Scan Count: 26, Previous Day Scan Count: 0, Scan Count: 26, Day of Week: Monday
+2024-07-01 23:35:35,476 DEBUG Establishing database connection
+2024-07-01 23:35:35,492 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-01 23:35:38,524 DEBUG Fetching and updating data
+2024-07-01 23:35:38,524 DEBUG Establishing database connection
+2024-07-01 23:35:38,524 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-01 23:35:38,524 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-01 23:35:38,524 INFO Total Scan Count: 26, Previous Day Scan Count: 0, Scan Count: 26, Day of Week: Monday
+2024-07-01 23:35:38,524 DEBUG Establishing database connection
+2024-07-01 23:35:38,540 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-01 23:36:35,528 DEBUG Fetching and updating data
+2024-07-01 23:36:35,528 DEBUG Establishing database connection
+2024-07-01 23:36:35,528 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-01 23:36:35,539 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-01 23:36:35,539 INFO Total Scan Count: 26, Previous Day Scan Count: 0, Scan Count: 26, Day of Week: Monday
+2024-07-01 23:36:35,539 DEBUG Establishing database connection
+2024-07-01 23:36:35,555 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-01 23:36:38,582 DEBUG Fetching and updating data
+2024-07-01 23:36:38,582 DEBUG Establishing database connection
+2024-07-01 23:36:38,582 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-01 23:36:38,597 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-01 23:36:38,597 INFO Total Scan Count: 26, Previous Day Scan Count: 0, Scan Count: 26, Day of Week: Monday
+2024-07-01 23:36:38,597 DEBUG Establishing database connection
+2024-07-01 23:36:38,597 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-01 23:37:35,578 DEBUG Fetching and updating data
+2024-07-01 23:37:35,578 DEBUG Establishing database connection
+2024-07-01 23:37:35,578 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-01 23:37:35,594 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-01 23:37:35,594 INFO Total Scan Count: 26, Previous Day Scan Count: 0, Scan Count: 26, Day of Week: Monday
+2024-07-01 23:37:35,594 DEBUG Establishing database connection
+2024-07-01 23:37:35,616 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-01 23:37:38,632 DEBUG Fetching and updating data
+2024-07-01 23:37:38,632 DEBUG Establishing database connection
+2024-07-01 23:37:38,639 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-01 23:37:38,655 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-01 23:37:38,655 INFO Total Scan Count: 26, Previous Day Scan Count: 0, Scan Count: 26, Day of Week: Monday
+2024-07-01 23:37:38,655 DEBUG Establishing database connection
+2024-07-01 23:37:38,655 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-01 23:38:35,642 DEBUG Fetching and updating data
+2024-07-01 23:38:35,642 DEBUG Establishing database connection
+2024-07-01 23:38:35,658 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-01 23:38:35,682 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-01 23:38:35,686 INFO Total Scan Count: 26, Previous Day Scan Count: 0, Scan Count: 26, Day of Week: Monday
+2024-07-01 23:38:35,686 DEBUG Establishing database connection
+2024-07-01 23:38:35,690 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-01 23:38:38,683 DEBUG Fetching and updating data
+2024-07-01 23:38:38,683 DEBUG Establishing database connection
+2024-07-01 23:38:38,687 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-01 23:38:38,698 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-01 23:38:38,698 INFO Total Scan Count: 26, Previous Day Scan Count: 0, Scan Count: 26, Day of Week: Monday
+2024-07-01 23:38:38,698 DEBUG Establishing database connection
+2024-07-01 23:38:38,703 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-01 23:39:35,718 DEBUG Fetching and updating data
+2024-07-01 23:39:35,718 DEBUG Establishing database connection
+2024-07-01 23:39:35,718 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-01 23:39:35,733 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-01 23:39:35,733 INFO Total Scan Count: 26, Previous Day Scan Count: 0, Scan Count: 26, Day of Week: Monday
+2024-07-01 23:39:35,733 DEBUG Establishing database connection
+2024-07-01 23:39:35,755 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-01 23:39:38,732 DEBUG Fetching and updating data
+2024-07-01 23:39:38,732 DEBUG Establishing database connection
+2024-07-01 23:39:38,732 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-01 23:39:38,747 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-01 23:39:38,747 INFO Total Scan Count: 26, Previous Day Scan Count: 0, Scan Count: 26, Day of Week: Monday
+2024-07-01 23:39:38,747 DEBUG Establishing database connection
+2024-07-01 23:39:38,747 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-01 23:40:35,780 DEBUG Fetching and updating data
+2024-07-01 23:40:35,780 DEBUG Establishing database connection
+2024-07-01 23:40:35,780 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-01 23:40:35,795 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-01 23:40:35,795 INFO Total Scan Count: 26, Previous Day Scan Count: 0, Scan Count: 26, Day of Week: Monday
+2024-07-01 23:40:35,795 DEBUG Establishing database connection
+2024-07-01 23:40:35,811 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-01 23:40:38,773 DEBUG Fetching and updating data
+2024-07-01 23:40:38,773 DEBUG Establishing database connection
+2024-07-01 23:40:38,773 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-01 23:40:38,789 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-01 23:40:38,789 INFO Total Scan Count: 26, Previous Day Scan Count: 0, Scan Count: 26, Day of Week: Monday
+2024-07-01 23:40:38,789 DEBUG Establishing database connection
+2024-07-01 23:40:38,795 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-01 23:41:35,838 DEBUG Fetching and updating data
+2024-07-01 23:41:35,838 DEBUG Establishing database connection
+2024-07-01 23:41:35,838 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-01 23:41:35,853 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-01 23:41:35,853 INFO Total Scan Count: 26, Previous Day Scan Count: 0, Scan Count: 26, Day of Week: Monday
+2024-07-01 23:41:35,853 DEBUG Establishing database connection
+2024-07-01 23:41:35,853 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-01 23:41:38,813 DEBUG Fetching and updating data
+2024-07-01 23:41:38,813 DEBUG Establishing database connection
+2024-07-01 23:41:38,820 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-01 23:41:38,820 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-01 23:41:38,820 INFO Total Scan Count: 26, Previous Day Scan Count: 0, Scan Count: 26, Day of Week: Monday
+2024-07-01 23:41:38,820 DEBUG Establishing database connection
+2024-07-01 23:41:38,820 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-01 23:42:35,903 DEBUG Fetching and updating data
+2024-07-01 23:42:35,903 DEBUG Establishing database connection
+2024-07-01 23:42:35,904 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-01 23:42:35,904 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-01 23:42:35,904 INFO Total Scan Count: 27, Previous Day Scan Count: 0, Scan Count: 27, Day of Week: Monday
+2024-07-01 23:42:35,904 DEBUG Establishing database connection
+2024-07-01 23:42:35,904 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-01 23:42:38,853 DEBUG Fetching and updating data
+2024-07-01 23:42:38,853 DEBUG Establishing database connection
+2024-07-01 23:42:38,853 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-01 23:42:38,853 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-01 23:42:38,853 INFO Total Scan Count: 27, Previous Day Scan Count: 0, Scan Count: 27, Day of Week: Monday
+2024-07-01 23:42:38,853 DEBUG Establishing database connection
+2024-07-01 23:42:38,853 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-01 23:43:35,936 DEBUG Fetching and updating data
+2024-07-01 23:43:35,936 DEBUG Establishing database connection
+2024-07-01 23:43:35,943 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-01 23:43:35,943 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-01 23:43:35,943 INFO Total Scan Count: 27, Previous Day Scan Count: 0, Scan Count: 27, Day of Week: Monday
+2024-07-01 23:43:35,943 DEBUG Establishing database connection
+2024-07-01 23:43:35,960 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-01 23:43:38,890 DEBUG Fetching and updating data
+2024-07-01 23:43:38,890 DEBUG Establishing database connection
+2024-07-01 23:43:38,890 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-01 23:43:38,890 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-01 23:43:38,890 INFO Total Scan Count: 27, Previous Day Scan Count: 0, Scan Count: 27, Day of Week: Monday
+2024-07-01 23:43:38,890 DEBUG Establishing database connection
+2024-07-01 23:43:38,890 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-01 23:44:35,993 DEBUG Fetching and updating data
+2024-07-01 23:44:35,993 DEBUG Establishing database connection
+2024-07-01 23:44:35,993 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-01 23:44:35,993 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-01 23:44:35,993 INFO Total Scan Count: 27, Previous Day Scan Count: 0, Scan Count: 27, Day of Week: Monday
+2024-07-01 23:44:35,993 DEBUG Establishing database connection
+2024-07-01 23:44:36,009 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-01 23:44:38,920 DEBUG Fetching and updating data
+2024-07-01 23:44:38,920 DEBUG Establishing database connection
+2024-07-01 23:44:38,920 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-01 23:44:38,935 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-01 23:44:38,935 INFO Total Scan Count: 27, Previous Day Scan Count: 0, Scan Count: 27, Day of Week: Monday
+2024-07-01 23:44:38,935 DEBUG Establishing database connection
+2024-07-01 23:44:38,935 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-01 23:45:36,039 DEBUG Fetching and updating data
+2024-07-01 23:45:36,039 DEBUG Establishing database connection
+2024-07-01 23:45:36,045 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-01 23:45:36,065 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-01 23:45:36,065 INFO Total Scan Count: 27, Previous Day Scan Count: 0, Scan Count: 27, Day of Week: Monday
+2024-07-01 23:45:36,065 DEBUG Establishing database connection
+2024-07-01 23:45:36,089 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-01 23:45:38,961 DEBUG Fetching and updating data
+2024-07-01 23:45:38,961 DEBUG Establishing database connection
+2024-07-01 23:45:38,961 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-01 23:45:38,973 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-01 23:45:38,973 INFO Total Scan Count: 27, Previous Day Scan Count: 0, Scan Count: 27, Day of Week: Monday
+2024-07-01 23:45:38,973 DEBUG Establishing database connection
+2024-07-01 23:45:38,973 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-01 23:46:36,120 DEBUG Fetching and updating data
+2024-07-01 23:46:36,120 DEBUG Establishing database connection
+2024-07-01 23:46:36,120 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-01 23:46:36,120 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-01 23:46:36,120 INFO Total Scan Count: 28, Previous Day Scan Count: 0, Scan Count: 28, Day of Week: Monday
+2024-07-01 23:46:36,120 DEBUG Establishing database connection
+2024-07-01 23:46:36,136 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-01 23:46:39,001 DEBUG Fetching and updating data
+2024-07-01 23:46:39,001 DEBUG Establishing database connection
+2024-07-01 23:46:39,003 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-01 23:46:39,012 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-01 23:46:39,012 INFO Total Scan Count: 28, Previous Day Scan Count: 0, Scan Count: 28, Day of Week: Monday
+2024-07-01 23:46:39,012 DEBUG Establishing database connection
+2024-07-01 23:46:39,014 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-01 23:47:36,169 DEBUG Fetching and updating data
+2024-07-01 23:47:36,169 DEBUG Establishing database connection
+2024-07-01 23:47:36,169 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-01 23:47:36,169 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-01 23:47:36,169 INFO Total Scan Count: 28, Previous Day Scan Count: 0, Scan Count: 28, Day of Week: Monday
+2024-07-01 23:47:36,169 DEBUG Establishing database connection
+2024-07-01 23:47:36,191 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-01 23:47:39,041 DEBUG Fetching and updating data
+2024-07-01 23:47:39,041 DEBUG Establishing database connection
+2024-07-01 23:47:39,041 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-01 23:47:39,041 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-01 23:47:39,041 INFO Total Scan Count: 28, Previous Day Scan Count: 0, Scan Count: 28, Day of Week: Monday
+2024-07-01 23:47:39,041 DEBUG Establishing database connection
+2024-07-01 23:47:39,041 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-01 23:48:36,215 DEBUG Fetching and updating data
+2024-07-01 23:48:36,215 DEBUG Establishing database connection
+2024-07-01 23:48:36,215 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-01 23:48:36,215 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-01 23:48:36,215 INFO Total Scan Count: 29, Previous Day Scan Count: 0, Scan Count: 29, Day of Week: Monday
+2024-07-01 23:48:36,215 DEBUG Establishing database connection
+2024-07-01 23:48:36,231 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-01 23:48:39,070 DEBUG Fetching and updating data
+2024-07-01 23:48:39,070 DEBUG Establishing database connection
+2024-07-01 23:48:39,070 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-01 23:48:39,092 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-01 23:48:39,092 INFO Total Scan Count: 29, Previous Day Scan Count: 0, Scan Count: 29, Day of Week: Monday
+2024-07-01 23:48:39,092 DEBUG Establishing database connection
+2024-07-01 23:48:39,092 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-01 23:49:36,267 DEBUG Fetching and updating data
+2024-07-01 23:49:36,267 DEBUG Establishing database connection
+2024-07-01 23:49:36,267 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-01 23:49:36,267 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-01 23:49:36,267 INFO Total Scan Count: 29, Previous Day Scan Count: 0, Scan Count: 29, Day of Week: Monday
+2024-07-01 23:49:36,267 DEBUG Establishing database connection
+2024-07-01 23:49:36,298 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-01 23:49:39,112 DEBUG Fetching and updating data
+2024-07-01 23:49:39,112 DEBUG Establishing database connection
+2024-07-01 23:49:39,112 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-01 23:49:39,112 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-01 23:49:39,112 INFO Total Scan Count: 29, Previous Day Scan Count: 0, Scan Count: 29, Day of Week: Monday
+2024-07-01 23:49:39,112 DEBUG Establishing database connection
+2024-07-01 23:49:39,112 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-01 23:50:36,321 DEBUG Fetching and updating data
+2024-07-01 23:50:36,321 DEBUG Establishing database connection
+2024-07-01 23:50:36,321 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-01 23:50:36,333 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-01 23:50:36,337 INFO Total Scan Count: 29, Previous Day Scan Count: 0, Scan Count: 29, Day of Week: Monday
+2024-07-01 23:50:36,337 DEBUG Establishing database connection
+2024-07-01 23:50:36,357 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-01 23:50:39,151 DEBUG Fetching and updating data
+2024-07-01 23:50:39,151 DEBUG Establishing database connection
+2024-07-01 23:50:39,155 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-01 23:50:39,163 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-01 23:50:39,163 INFO Total Scan Count: 29, Previous Day Scan Count: 0, Scan Count: 29, Day of Week: Monday
+2024-07-01 23:50:39,163 DEBUG Establishing database connection
+2024-07-01 23:50:39,163 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-01 23:51:36,379 DEBUG Fetching and updating data
+2024-07-01 23:51:36,379 DEBUG Establishing database connection
+2024-07-01 23:51:36,379 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-01 23:51:36,379 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-01 23:51:36,379 INFO Total Scan Count: 29, Previous Day Scan Count: 0, Scan Count: 29, Day of Week: Monday
+2024-07-01 23:51:36,379 DEBUG Establishing database connection
+2024-07-01 23:51:36,394 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-01 23:51:39,185 DEBUG Fetching and updating data
+2024-07-01 23:51:39,185 DEBUG Establishing database connection
+2024-07-01 23:51:39,185 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-01 23:51:39,185 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-01 23:51:39,185 INFO Total Scan Count: 29, Previous Day Scan Count: 0, Scan Count: 29, Day of Week: Monday
+2024-07-01 23:51:39,185 DEBUG Establishing database connection
+2024-07-01 23:51:39,200 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-01 23:52:36,421 DEBUG Fetching and updating data
+2024-07-01 23:52:36,422 DEBUG Establishing database connection
+2024-07-01 23:52:36,424 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-01 23:52:39,160 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-01 23:52:39,160 INFO Total Scan Count: 29, Previous Day Scan Count: 0, Scan Count: 29, Day of Week: Monday
+2024-07-01 23:52:39,160 DEBUG Establishing database connection
+2024-07-01 23:52:39,173 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-01 23:52:39,220 DEBUG Fetching and updating data
+2024-07-01 23:52:39,221 DEBUG Establishing database connection
+2024-07-01 23:52:39,223 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-01 23:52:39,372 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-01 23:52:39,372 INFO Total Scan Count: 29, Previous Day Scan Count: 0, Scan Count: 29, Day of Week: Monday
+2024-07-01 23:52:39,372 DEBUG Establishing database connection
+2024-07-01 23:52:39,372 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-01 23:53:39,199 DEBUG Fetching and updating data
+2024-07-01 23:53:39,199 DEBUG Establishing database connection
+2024-07-01 23:53:39,200 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-01 23:53:39,396 DEBUG Fetching and updating data
+2024-07-01 23:53:39,396 DEBUG Establishing database connection
+2024-07-01 23:53:39,396 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-01 23:53:43,300 ERROR Error in fetch_and_update_data: HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /api/Scans/GetScanCount (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000019D9BBEA060>: Failed to establish a new connection: [WinError 10061] Hedef makine etkin olarak reddettiðinden baðlantý kurulamadý'))
+2024-07-01 23:53:43,519 ERROR Error in fetch_and_update_data: HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /api/Scans/GetScanCount (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001EA593A2600>: Failed to establish a new connection: [WinError 10061] Hedef makine etkin olarak reddettiðinden baðlantý kurulamadý'))
+2024-07-03 09:55:29,427 INFO Starting fetch_and_update_data
+2024-07-03 09:55:29,429 DEBUG Fetching and updating data
+2024-07-03 09:55:29,429 DEBUG Establishing database connection
+2024-07-03 09:55:32,655 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-03 09:55:38,669 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-03 09:55:38,669 INFO Total Scan Count: 46, Previous Day Scan Count: 0, Scan Count: 46, Day of Week: Wednesday
+2024-07-03 09:55:38,669 DEBUG Establishing database connection
+2024-07-03 09:55:38,830 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-03 09:55:38,830 INFO Starting Flask app
+2024-07-03 09:55:39,490 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:7777
+2024-07-03 09:55:39,490 INFO [33mPress CTRL+C to quit[0m
+2024-07-03 09:55:39,521 INFO  * Restarting with stat
+2024-07-03 09:55:43,488 INFO Starting fetch_and_update_data
+2024-07-03 09:55:43,488 DEBUG Fetching and updating data
+2024-07-03 09:55:43,488 DEBUG Establishing database connection
+2024-07-03 09:55:44,605 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-03 09:55:44,793 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-03 09:55:44,793 INFO Total Scan Count: 46, Previous Day Scan Count: 0, Scan Count: 46, Day of Week: Wednesday
+2024-07-03 09:55:44,793 DEBUG Establishing database connection
+2024-07-03 09:55:44,860 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-03 09:55:44,860 INFO Starting Flask app
+2024-07-03 09:55:44,885 WARNING  * Debugger is active!
+2024-07-03 09:55:44,906 INFO  * Debugger PIN: 705-887-496
+2024-07-03 09:56:18,382 INFO Rendering index page
+2024-07-03 09:56:18,382 DEBUG Establishing database connection
+2024-07-03 09:56:18,413 INFO Fetched data with query: SELECT DayOfWeek, ScanCount, PreviousWeekScanCount FROM WebHit
+2024-07-03 09:56:29,933 INFO Plot created and saved to templates/plot.html
+2024-07-03 09:56:31,198 INFO 127.0.0.1 - - [03/Jul/2024 09:56:31] "GET /plot HTTP/1.1" 200 -
+2024-07-03 09:56:38,844 DEBUG Fetching and updating data
+2024-07-03 09:56:38,844 DEBUG Establishing database connection
+2024-07-03 09:56:38,844 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-03 09:56:38,943 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-03 09:56:38,943 INFO Total Scan Count: 46, Previous Day Scan Count: 0, Scan Count: 46, Day of Week: Wednesday
+2024-07-03 09:56:38,943 DEBUG Establishing database connection
+2024-07-03 09:56:39,059 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-03 09:56:44,865 DEBUG Fetching and updating data
+2024-07-03 09:56:44,865 DEBUG Establishing database connection
+2024-07-03 09:56:44,865 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-03 09:56:44,865 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-03 09:56:44,865 INFO Total Scan Count: 46, Previous Day Scan Count: 0, Scan Count: 46, Day of Week: Wednesday
+2024-07-03 09:56:44,865 DEBUG Establishing database connection
+2024-07-03 09:56:44,881 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-03 09:57:39,084 DEBUG Fetching and updating data
+2024-07-03 09:57:39,084 DEBUG Establishing database connection
+2024-07-03 09:57:39,084 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-03 09:57:39,218 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-03 09:57:39,218 INFO Total Scan Count: 46, Previous Day Scan Count: 0, Scan Count: 46, Day of Week: Wednesday
+2024-07-03 09:57:39,218 DEBUG Establishing database connection
+2024-07-03 09:57:39,303 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-03 09:57:44,910 DEBUG Fetching and updating data
+2024-07-03 09:57:44,910 DEBUG Establishing database connection
+2024-07-03 09:57:44,910 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-03 09:57:44,925 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-03 09:57:44,925 INFO Total Scan Count: 46, Previous Day Scan Count: 0, Scan Count: 46, Day of Week: Wednesday
+2024-07-03 09:57:44,925 DEBUG Establishing database connection
+2024-07-03 09:57:44,938 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-03 09:58:39,320 DEBUG Fetching and updating data
+2024-07-03 09:58:39,320 DEBUG Establishing database connection
+2024-07-03 09:58:39,320 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-03 09:58:39,339 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-03 09:58:39,339 INFO Total Scan Count: 46, Previous Day Scan Count: 0, Scan Count: 46, Day of Week: Wednesday
+2024-07-03 09:58:39,339 DEBUG Establishing database connection
+2024-07-03 09:58:39,371 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-03 09:58:44,960 DEBUG Fetching and updating data
+2024-07-03 09:58:44,960 DEBUG Establishing database connection
+2024-07-03 09:58:44,976 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-03 09:58:44,998 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-03 09:58:44,998 INFO Total Scan Count: 46, Previous Day Scan Count: 0, Scan Count: 46, Day of Week: Wednesday
+2024-07-03 09:58:44,998 DEBUG Establishing database connection
+2024-07-03 09:58:45,014 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-03 09:59:39,377 DEBUG Fetching and updating data
+2024-07-03 09:59:39,377 DEBUG Establishing database connection
+2024-07-03 09:59:39,377 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-03 09:59:39,398 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-03 09:59:39,398 INFO Total Scan Count: 47, Previous Day Scan Count: 0, Scan Count: 47, Day of Week: Wednesday
+2024-07-03 09:59:39,398 DEBUG Establishing database connection
+2024-07-03 09:59:39,414 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-03 09:59:45,026 DEBUG Fetching and updating data
+2024-07-03 09:59:45,026 DEBUG Establishing database connection
+2024-07-03 09:59:45,026 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-03 09:59:45,043 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-03 09:59:45,043 INFO Total Scan Count: 47, Previous Day Scan Count: 0, Scan Count: 47, Day of Week: Wednesday
+2024-07-03 09:59:45,043 DEBUG Establishing database connection
+2024-07-03 09:59:45,048 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-03 10:00:39,427 DEBUG Fetching and updating data
+2024-07-03 10:00:39,427 DEBUG Establishing database connection
+2024-07-03 10:00:39,427 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-03 10:00:39,443 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-03 10:00:39,443 INFO Total Scan Count: 47, Previous Day Scan Count: 0, Scan Count: 47, Day of Week: Wednesday
+2024-07-03 10:00:39,443 DEBUG Establishing database connection
+2024-07-03 10:00:39,459 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-03 10:00:45,058 DEBUG Fetching and updating data
+2024-07-03 10:00:45,058 DEBUG Establishing database connection
+2024-07-03 10:00:45,058 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-03 10:00:45,074 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-03 10:00:45,074 INFO Total Scan Count: 47, Previous Day Scan Count: 0, Scan Count: 47, Day of Week: Wednesday
+2024-07-03 10:00:45,074 DEBUG Establishing database connection
+2024-07-03 10:00:45,089 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-03 10:01:39,477 DEBUG Fetching and updating data
+2024-07-03 10:01:39,477 DEBUG Establishing database connection
+2024-07-03 10:01:39,480 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-03 10:01:39,502 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-03 10:01:39,502 INFO Total Scan Count: 47, Previous Day Scan Count: 0, Scan Count: 47, Day of Week: Wednesday
+2024-07-03 10:01:39,511 DEBUG Establishing database connection
+2024-07-03 10:01:39,513 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-03 10:01:45,104 DEBUG Fetching and updating data
+2024-07-03 10:01:45,104 DEBUG Establishing database connection
+2024-07-03 10:01:45,109 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-03 10:01:45,129 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-03 10:01:45,129 INFO Total Scan Count: 47, Previous Day Scan Count: 0, Scan Count: 47, Day of Week: Wednesday
+2024-07-03 10:01:45,129 DEBUG Establishing database connection
+2024-07-03 10:01:45,151 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-03 10:02:39,518 DEBUG Fetching and updating data
+2024-07-03 10:02:39,518 DEBUG Establishing database connection
+2024-07-03 10:02:39,534 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-03 10:02:39,550 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-03 10:02:39,566 INFO Total Scan Count: 47, Previous Day Scan Count: 0, Scan Count: 47, Day of Week: Wednesday
+2024-07-03 10:02:39,566 DEBUG Establishing database connection
+2024-07-03 10:02:39,603 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-03 10:02:45,156 DEBUG Fetching and updating data
+2024-07-03 10:02:45,156 DEBUG Establishing database connection
+2024-07-03 10:02:45,156 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-03 10:02:45,172 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-03 10:02:45,172 INFO Total Scan Count: 47, Previous Day Scan Count: 0, Scan Count: 47, Day of Week: Wednesday
+2024-07-03 10:02:45,172 DEBUG Establishing database connection
+2024-07-03 10:02:45,203 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-03 10:03:39,609 DEBUG Fetching and updating data
+2024-07-03 10:03:39,609 DEBUG Establishing database connection
+2024-07-03 10:03:39,609 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-03 10:03:39,625 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-03 10:03:39,625 INFO Total Scan Count: 47, Previous Day Scan Count: 0, Scan Count: 47, Day of Week: Wednesday
+2024-07-03 10:03:39,625 DEBUG Establishing database connection
+2024-07-03 10:03:39,641 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-03 10:03:45,214 DEBUG Fetching and updating data
+2024-07-03 10:03:45,214 DEBUG Establishing database connection
+2024-07-03 10:03:45,225 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-03 10:03:45,237 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-03 10:03:45,237 INFO Total Scan Count: 47, Previous Day Scan Count: 0, Scan Count: 47, Day of Week: Wednesday
+2024-07-03 10:03:45,237 DEBUG Establishing database connection
+2024-07-03 10:03:45,248 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-03 10:04:39,658 DEBUG Fetching and updating data
+2024-07-03 10:04:39,658 DEBUG Establishing database connection
+2024-07-03 10:04:39,658 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-03 10:04:39,676 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-03 10:04:39,676 INFO Total Scan Count: 47, Previous Day Scan Count: 0, Scan Count: 47, Day of Week: Wednesday
+2024-07-03 10:04:39,676 DEBUG Establishing database connection
+2024-07-03 10:04:39,676 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-03 10:04:45,260 DEBUG Fetching and updating data
+2024-07-03 10:04:45,260 DEBUG Establishing database connection
+2024-07-03 10:04:45,260 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-03 10:04:45,275 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-03 10:04:45,275 INFO Total Scan Count: 47, Previous Day Scan Count: 0, Scan Count: 47, Day of Week: Wednesday
+2024-07-03 10:04:45,275 DEBUG Establishing database connection
+2024-07-03 10:04:45,292 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-03 10:05:39,703 DEBUG Fetching and updating data
+2024-07-03 10:05:39,703 DEBUG Establishing database connection
+2024-07-03 10:05:39,703 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-03 10:05:39,719 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-03 10:05:39,719 INFO Total Scan Count: 47, Previous Day Scan Count: 0, Scan Count: 47, Day of Week: Wednesday
+2024-07-03 10:05:39,719 DEBUG Establishing database connection
+2024-07-03 10:05:39,719 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-03 10:05:45,315 DEBUG Fetching and updating data
+2024-07-03 10:05:45,315 DEBUG Establishing database connection
+2024-07-03 10:05:45,315 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-03 10:05:45,315 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-03 10:05:45,330 INFO Total Scan Count: 47, Previous Day Scan Count: 0, Scan Count: 47, Day of Week: Wednesday
+2024-07-03 10:05:45,330 DEBUG Establishing database connection
+2024-07-03 10:05:45,330 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-03 10:06:39,744 DEBUG Fetching and updating data
+2024-07-03 10:06:39,744 DEBUG Establishing database connection
+2024-07-03 10:06:39,744 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-03 10:06:39,744 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-03 10:06:39,744 INFO Total Scan Count: 48, Previous Day Scan Count: 0, Scan Count: 48, Day of Week: Wednesday
+2024-07-03 10:06:39,744 DEBUG Establishing database connection
+2024-07-03 10:06:39,759 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-03 10:06:45,363 DEBUG Fetching and updating data
+2024-07-03 10:06:45,363 DEBUG Establishing database connection
+2024-07-03 10:06:45,363 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-03 10:06:45,377 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-03 10:06:45,377 INFO Total Scan Count: 48, Previous Day Scan Count: 0, Scan Count: 48, Day of Week: Wednesday
+2024-07-03 10:06:45,377 DEBUG Establishing database connection
+2024-07-03 10:06:45,377 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-03 10:07:39,765 DEBUG Fetching and updating data
+2024-07-03 10:07:39,765 DEBUG Establishing database connection
+2024-07-03 10:07:39,765 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-03 10:07:39,835 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-03 10:07:39,835 INFO Total Scan Count: 48, Previous Day Scan Count: 0, Scan Count: 48, Day of Week: Wednesday
+2024-07-03 10:07:39,835 DEBUG Establishing database connection
+2024-07-03 10:07:39,837 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-03 10:07:45,397 DEBUG Fetching and updating data
+2024-07-03 10:07:45,397 DEBUG Establishing database connection
+2024-07-03 10:07:45,401 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-03 10:07:45,440 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-03 10:07:45,456 INFO Total Scan Count: 48, Previous Day Scan Count: 0, Scan Count: 48, Day of Week: Wednesday
+2024-07-03 10:07:45,456 DEBUG Establishing database connection
+2024-07-03 10:07:45,517 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-03 10:08:39,845 DEBUG Fetching and updating data
+2024-07-03 10:08:39,845 DEBUG Establishing database connection
+2024-07-03 10:08:39,845 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-03 10:08:39,876 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-03 10:08:39,876 INFO Total Scan Count: 48, Previous Day Scan Count: 0, Scan Count: 48, Day of Week: Wednesday
+2024-07-03 10:08:39,876 DEBUG Establishing database connection
+2024-07-03 10:08:39,876 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-03 10:08:45,523 DEBUG Fetching and updating data
+2024-07-03 10:08:45,523 DEBUG Establishing database connection
+2024-07-03 10:08:45,523 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-03 10:08:45,547 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-03 10:08:45,547 INFO Total Scan Count: 48, Previous Day Scan Count: 0, Scan Count: 48, Day of Week: Wednesday
+2024-07-03 10:08:45,547 DEBUG Establishing database connection
+2024-07-03 10:08:45,547 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-03 10:09:39,900 DEBUG Fetching and updating data
+2024-07-03 10:09:39,900 DEBUG Establishing database connection
+2024-07-03 10:09:39,900 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-03 10:09:39,922 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-03 10:09:39,922 INFO Total Scan Count: 49, Previous Day Scan Count: 0, Scan Count: 49, Day of Week: Wednesday
+2024-07-03 10:09:39,922 DEBUG Establishing database connection
+2024-07-03 10:09:39,922 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-03 10:09:45,566 DEBUG Fetching and updating data
+2024-07-03 10:09:45,566 DEBUG Establishing database connection
+2024-07-03 10:09:45,566 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-03 10:09:45,582 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-03 10:09:45,582 INFO Total Scan Count: 49, Previous Day Scan Count: 0, Scan Count: 49, Day of Week: Wednesday
+2024-07-03 10:09:45,582 DEBUG Establishing database connection
+2024-07-03 10:09:45,598 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-03 10:10:39,936 DEBUG Fetching and updating data
+2024-07-03 10:10:39,937 DEBUG Establishing database connection
+2024-07-03 10:10:39,939 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-03 10:10:39,958 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-03 10:10:39,958 INFO Total Scan Count: 49, Previous Day Scan Count: 0, Scan Count: 49, Day of Week: Wednesday
+2024-07-03 10:10:39,958 DEBUG Establishing database connection
+2024-07-03 10:10:39,979 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-03 10:10:45,621 DEBUG Fetching and updating data
+2024-07-03 10:10:45,621 DEBUG Establishing database connection
+2024-07-03 10:10:45,624 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-03 10:10:45,635 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-03 10:10:45,635 INFO Total Scan Count: 49, Previous Day Scan Count: 0, Scan Count: 49, Day of Week: Wednesday
+2024-07-03 10:10:45,635 DEBUG Establishing database connection
+2024-07-03 10:10:45,654 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-03 10:11:39,996 DEBUG Fetching and updating data
+2024-07-03 10:11:39,996 DEBUG Establishing database connection
+2024-07-03 10:11:39,996 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-03 10:11:40,012 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-03 10:11:40,012 INFO Total Scan Count: 49, Previous Day Scan Count: 0, Scan Count: 49, Day of Week: Wednesday
+2024-07-03 10:11:40,012 DEBUG Establishing database connection
+2024-07-03 10:11:40,012 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-03 10:11:45,670 DEBUG Fetching and updating data
+2024-07-03 10:11:45,671 DEBUG Establishing database connection
+2024-07-03 10:11:45,689 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-03 10:11:45,720 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-03 10:11:45,720 INFO Total Scan Count: 49, Previous Day Scan Count: 0, Scan Count: 49, Day of Week: Wednesday
+2024-07-03 10:11:45,720 DEBUG Establishing database connection
+2024-07-03 10:11:45,764 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-03 10:12:40,034 DEBUG Fetching and updating data
+2024-07-03 10:12:40,034 DEBUG Establishing database connection
+2024-07-03 10:12:40,088 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-03 10:12:40,119 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-03 10:12:40,136 INFO Total Scan Count: 49, Previous Day Scan Count: 0, Scan Count: 49, Day of Week: Wednesday
+2024-07-03 10:12:40,136 DEBUG Establishing database connection
+2024-07-03 10:12:40,150 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-03 10:12:45,848 DEBUG Fetching and updating data
+2024-07-03 10:12:45,848 DEBUG Establishing database connection
+2024-07-03 10:12:45,906 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-03 10:12:45,976 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-03 10:12:46,028 INFO Total Scan Count: 49, Previous Day Scan Count: 0, Scan Count: 49, Day of Week: Wednesday
+2024-07-03 10:12:46,028 DEBUG Establishing database connection
+2024-07-03 10:12:46,192 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-03 10:13:40,171 DEBUG Fetching and updating data
+2024-07-03 10:13:40,173 DEBUG Establishing database connection
+2024-07-03 10:13:40,182 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-03 10:13:40,293 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-03 10:13:40,293 INFO Total Scan Count: 49, Previous Day Scan Count: 0, Scan Count: 49, Day of Week: Wednesday
+2024-07-03 10:13:40,293 DEBUG Establishing database connection
+2024-07-03 10:13:40,293 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-03 10:13:46,214 DEBUG Fetching and updating data
+2024-07-03 10:13:46,214 DEBUG Establishing database connection
+2024-07-03 10:13:46,214 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-03 10:13:46,245 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-03 10:13:46,261 INFO Total Scan Count: 49, Previous Day Scan Count: 0, Scan Count: 49, Day of Week: Wednesday
+2024-07-03 10:13:46,261 DEBUG Establishing database connection
+2024-07-03 10:13:46,285 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-03 10:14:40,313 DEBUG Fetching and updating data
+2024-07-03 10:14:40,313 DEBUG Establishing database connection
+2024-07-03 10:14:40,313 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-03 10:14:40,328 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-03 10:14:40,328 INFO Total Scan Count: 49, Previous Day Scan Count: 0, Scan Count: 49, Day of Week: Wednesday
+2024-07-03 10:14:40,328 DEBUG Establishing database connection
+2024-07-03 10:14:40,344 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-03 10:14:46,301 DEBUG Fetching and updating data
+2024-07-03 10:14:46,301 DEBUG Establishing database connection
+2024-07-03 10:14:46,301 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-03 10:14:46,301 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-03 10:14:46,317 INFO Total Scan Count: 49, Previous Day Scan Count: 0, Scan Count: 49, Day of Week: Wednesday
+2024-07-03 10:14:46,317 DEBUG Establishing database connection
+2024-07-03 10:14:46,317 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-03 10:15:40,358 DEBUG Fetching and updating data
+2024-07-03 10:15:40,358 DEBUG Establishing database connection
+2024-07-03 10:15:40,358 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-03 10:15:40,374 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-03 10:15:40,374 INFO Total Scan Count: 49, Previous Day Scan Count: 0, Scan Count: 49, Day of Week: Wednesday
+2024-07-03 10:15:40,374 DEBUG Establishing database connection
+2024-07-03 10:15:40,383 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-03 10:15:46,330 DEBUG Fetching and updating data
+2024-07-03 10:15:46,330 DEBUG Establishing database connection
+2024-07-03 10:15:46,330 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-03 10:15:46,337 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-03 10:15:46,337 INFO Total Scan Count: 49, Previous Day Scan Count: 0, Scan Count: 49, Day of Week: Wednesday
+2024-07-03 10:15:46,337 DEBUG Establishing database connection
+2024-07-03 10:15:46,353 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-03 10:16:40,403 DEBUG Fetching and updating data
+2024-07-03 10:16:40,403 DEBUG Establishing database connection
+2024-07-03 10:16:40,411 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-03 10:16:40,430 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-03 10:16:40,430 INFO Total Scan Count: 49, Previous Day Scan Count: 0, Scan Count: 49, Day of Week: Wednesday
+2024-07-03 10:16:40,430 DEBUG Establishing database connection
+2024-07-03 10:16:40,430 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-03 10:16:46,378 DEBUG Fetching and updating data
+2024-07-03 10:16:46,378 DEBUG Establishing database connection
+2024-07-03 10:16:46,378 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-03 10:16:46,393 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-03 10:16:46,393 INFO Total Scan Count: 49, Previous Day Scan Count: 0, Scan Count: 49, Day of Week: Wednesday
+2024-07-03 10:16:46,393 DEBUG Establishing database connection
+2024-07-03 10:16:46,417 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-03 10:17:40,443 DEBUG Fetching and updating data
+2024-07-03 10:17:40,443 DEBUG Establishing database connection
+2024-07-03 10:17:40,443 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-03 10:17:40,458 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-03 10:17:40,465 INFO Total Scan Count: 50, Previous Day Scan Count: 0, Scan Count: 50, Day of Week: Wednesday
+2024-07-03 10:17:40,465 DEBUG Establishing database connection
+2024-07-03 10:17:40,465 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-03 10:17:46,442 DEBUG Fetching and updating data
+2024-07-03 10:17:46,442 DEBUG Establishing database connection
+2024-07-03 10:17:46,442 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-03 10:17:46,457 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-03 10:17:46,457 INFO Total Scan Count: 50, Previous Day Scan Count: 0, Scan Count: 50, Day of Week: Wednesday
+2024-07-03 10:17:46,457 DEBUG Establishing database connection
+2024-07-03 10:17:46,457 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-03 10:18:40,476 DEBUG Fetching and updating data
+2024-07-03 10:18:40,476 DEBUG Establishing database connection
+2024-07-03 10:18:40,486 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-03 10:18:40,511 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-03 10:18:40,511 INFO Total Scan Count: 50, Previous Day Scan Count: 0, Scan Count: 50, Day of Week: Wednesday
+2024-07-03 10:18:40,511 DEBUG Establishing database connection
+2024-07-03 10:18:40,511 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-03 10:18:46,486 DEBUG Fetching and updating data
+2024-07-03 10:18:46,486 DEBUG Establishing database connection
+2024-07-03 10:18:46,486 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-03 10:18:46,502 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-03 10:18:46,502 INFO Total Scan Count: 50, Previous Day Scan Count: 0, Scan Count: 50, Day of Week: Wednesday
+2024-07-03 10:18:46,502 DEBUG Establishing database connection
+2024-07-03 10:18:46,502 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-03 10:19:40,538 DEBUG Fetching and updating data
+2024-07-03 10:19:40,539 DEBUG Establishing database connection
+2024-07-03 10:19:40,540 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-03 10:19:40,558 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-03 10:19:40,558 INFO Total Scan Count: 50, Previous Day Scan Count: 0, Scan Count: 50, Day of Week: Wednesday
+2024-07-03 10:19:40,558 DEBUG Establishing database connection
+2024-07-03 10:19:40,558 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-03 10:19:46,519 DEBUG Fetching and updating data
+2024-07-03 10:19:46,519 DEBUG Establishing database connection
+2024-07-03 10:19:46,519 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-03 10:19:46,535 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-03 10:19:46,535 INFO Total Scan Count: 50, Previous Day Scan Count: 0, Scan Count: 50, Day of Week: Wednesday
+2024-07-03 10:19:46,550 DEBUG Establishing database connection
+2024-07-03 10:19:46,566 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-03 10:20:40,585 DEBUG Fetching and updating data
+2024-07-03 10:20:40,585 DEBUG Establishing database connection
+2024-07-03 10:20:40,634 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-03 10:20:40,649 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-03 10:20:40,649 INFO Total Scan Count: 50, Previous Day Scan Count: 0, Scan Count: 50, Day of Week: Wednesday
+2024-07-03 10:20:40,649 DEBUG Establishing database connection
+2024-07-03 10:20:40,664 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-03 10:20:46,593 DEBUG Fetching and updating data
+2024-07-03 10:20:46,593 DEBUG Establishing database connection
+2024-07-03 10:20:46,593 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-03 10:20:46,609 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-03 10:20:46,609 INFO Total Scan Count: 50, Previous Day Scan Count: 0, Scan Count: 50, Day of Week: Wednesday
+2024-07-03 10:20:46,609 DEBUG Establishing database connection
+2024-07-03 10:20:46,609 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-03 10:21:40,684 DEBUG Fetching and updating data
+2024-07-03 10:21:40,684 DEBUG Establishing database connection
+2024-07-03 10:21:40,684 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-03 10:21:40,699 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-03 10:21:40,699 INFO Total Scan Count: 51, Previous Day Scan Count: 0, Scan Count: 51, Day of Week: Wednesday
+2024-07-03 10:21:40,699 DEBUG Establishing database connection
+2024-07-03 10:21:40,699 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-03 10:21:46,629 DEBUG Fetching and updating data
+2024-07-03 10:21:46,629 DEBUG Establishing database connection
+2024-07-03 10:21:46,629 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-03 10:21:46,645 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-03 10:21:46,645 INFO Total Scan Count: 51, Previous Day Scan Count: 0, Scan Count: 51, Day of Week: Wednesday
+2024-07-03 10:21:46,645 DEBUG Establishing database connection
+2024-07-03 10:21:46,645 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-03 10:22:40,722 DEBUG Fetching and updating data
+2024-07-03 10:22:40,723 DEBUG Establishing database connection
+2024-07-03 10:22:40,730 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-03 10:22:40,730 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-03 10:22:40,730 INFO Total Scan Count: 51, Previous Day Scan Count: 0, Scan Count: 51, Day of Week: Wednesday
+2024-07-03 10:22:40,730 DEBUG Establishing database connection
+2024-07-03 10:22:40,749 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-03 10:22:46,661 DEBUG Fetching and updating data
+2024-07-03 10:22:46,661 DEBUG Establishing database connection
+2024-07-03 10:22:46,661 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-03 10:22:46,682 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-03 10:22:46,682 INFO Total Scan Count: 51, Previous Day Scan Count: 0, Scan Count: 51, Day of Week: Wednesday
+2024-07-03 10:22:46,682 DEBUG Establishing database connection
+2024-07-03 10:22:46,698 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-03 10:23:40,776 DEBUG Fetching and updating data
+2024-07-03 10:23:40,776 DEBUG Establishing database connection
+2024-07-03 10:23:40,776 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-03 10:23:40,792 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-03 10:23:40,792 INFO Total Scan Count: 51, Previous Day Scan Count: 0, Scan Count: 51, Day of Week: Wednesday
+2024-07-03 10:23:40,792 DEBUG Establishing database connection
+2024-07-03 10:23:40,808 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-03 10:23:46,715 DEBUG Fetching and updating data
+2024-07-03 10:23:46,715 DEBUG Establishing database connection
+2024-07-03 10:23:46,723 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-03 10:23:46,751 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-03 10:23:46,751 INFO Total Scan Count: 51, Previous Day Scan Count: 0, Scan Count: 51, Day of Week: Wednesday
+2024-07-03 10:23:46,751 DEBUG Establishing database connection
+2024-07-03 10:23:46,767 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-03 10:24:40,820 DEBUG Fetching and updating data
+2024-07-03 10:24:40,820 DEBUG Establishing database connection
+2024-07-03 10:24:40,820 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-03 10:24:40,851 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-03 10:24:40,851 INFO Total Scan Count: 51, Previous Day Scan Count: 0, Scan Count: 51, Day of Week: Wednesday
+2024-07-03 10:24:40,851 DEBUG Establishing database connection
+2024-07-03 10:24:40,867 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-03 10:24:46,786 DEBUG Fetching and updating data
+2024-07-03 10:24:46,786 DEBUG Establishing database connection
+2024-07-03 10:24:46,786 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-03 10:24:46,802 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-03 10:24:46,802 INFO Total Scan Count: 51, Previous Day Scan Count: 0, Scan Count: 51, Day of Week: Wednesday
+2024-07-03 10:24:46,802 DEBUG Establishing database connection
+2024-07-03 10:24:46,818 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-03 10:25:40,872 DEBUG Fetching and updating data
+2024-07-03 10:25:40,872 DEBUG Establishing database connection
+2024-07-03 10:25:40,872 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-03 10:25:40,888 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-03 10:25:40,888 INFO Total Scan Count: 51, Previous Day Scan Count: 0, Scan Count: 51, Day of Week: Wednesday
+2024-07-03 10:25:40,903 DEBUG Establishing database connection
+2024-07-03 10:25:40,903 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-03 10:25:46,832 DEBUG Fetching and updating data
+2024-07-03 10:25:46,832 DEBUG Establishing database connection
+2024-07-03 10:25:46,832 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-03 10:25:46,848 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-03 10:25:46,848 INFO Total Scan Count: 51, Previous Day Scan Count: 0, Scan Count: 51, Day of Week: Wednesday
+2024-07-03 10:25:46,848 DEBUG Establishing database connection
+2024-07-03 10:25:46,848 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-03 10:26:40,923 DEBUG Fetching and updating data
+2024-07-03 10:26:40,924 DEBUG Establishing database connection
+2024-07-03 10:26:40,925 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-03 10:26:40,925 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-03 10:26:40,925 INFO Total Scan Count: 52, Previous Day Scan Count: 0, Scan Count: 52, Day of Week: Wednesday
+2024-07-03 10:26:40,925 DEBUG Establishing database connection
+2024-07-03 10:26:40,942 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-03 10:26:46,867 DEBUG Fetching and updating data
+2024-07-03 10:26:46,868 DEBUG Establishing database connection
+2024-07-03 10:26:46,870 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-03 10:26:46,894 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-03 10:26:46,894 INFO Total Scan Count: 52, Previous Day Scan Count: 0, Scan Count: 52, Day of Week: Wednesday
+2024-07-03 10:26:46,894 DEBUG Establishing database connection
+2024-07-03 10:26:46,912 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-03 10:27:40,952 DEBUG Fetching and updating data
+2024-07-03 10:27:40,952 DEBUG Establishing database connection
+2024-07-03 10:27:40,959 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-03 10:27:40,959 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-03 10:27:40,959 INFO Total Scan Count: 52, Previous Day Scan Count: 0, Scan Count: 52, Day of Week: Wednesday
+2024-07-03 10:27:40,959 DEBUG Establishing database connection
+2024-07-03 10:27:40,959 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-03 10:27:46,926 DEBUG Fetching and updating data
+2024-07-03 10:27:46,926 DEBUG Establishing database connection
+2024-07-03 10:27:46,932 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-03 10:27:46,948 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-03 10:27:46,948 INFO Total Scan Count: 52, Previous Day Scan Count: 0, Scan Count: 52, Day of Week: Wednesday
+2024-07-03 10:27:46,948 DEBUG Establishing database connection
+2024-07-03 10:27:46,964 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-03 10:28:40,981 DEBUG Fetching and updating data
+2024-07-03 10:28:40,981 DEBUG Establishing database connection
+2024-07-03 10:28:40,981 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-03 10:28:40,997 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-03 10:28:40,997 INFO Total Scan Count: 52, Previous Day Scan Count: 0, Scan Count: 52, Day of Week: Wednesday
+2024-07-03 10:28:40,997 DEBUG Establishing database connection
+2024-07-03 10:28:40,997 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-03 10:28:46,983 DEBUG Fetching and updating data
+2024-07-03 10:28:46,983 DEBUG Establishing database connection
+2024-07-03 10:28:46,983 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-03 10:28:46,998 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-03 10:28:46,998 INFO Total Scan Count: 52, Previous Day Scan Count: 0, Scan Count: 52, Day of Week: Wednesday
+2024-07-03 10:28:46,998 DEBUG Establishing database connection
+2024-07-03 10:28:47,021 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-03 10:29:41,018 DEBUG Fetching and updating data
+2024-07-03 10:29:41,018 DEBUG Establishing database connection
+2024-07-03 10:29:41,018 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-03 10:29:41,018 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-03 10:29:41,018 INFO Total Scan Count: 52, Previous Day Scan Count: 0, Scan Count: 52, Day of Week: Wednesday
+2024-07-03 10:29:41,018 DEBUG Establishing database connection
+2024-07-03 10:29:41,034 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-03 10:29:47,027 DEBUG Fetching and updating data
+2024-07-03 10:29:47,027 DEBUG Establishing database connection
+2024-07-03 10:29:47,027 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-03 10:29:47,043 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-03 10:29:47,043 INFO Total Scan Count: 52, Previous Day Scan Count: 0, Scan Count: 52, Day of Week: Wednesday
+2024-07-03 10:29:47,043 DEBUG Establishing database connection
+2024-07-03 10:29:47,043 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-03 10:30:41,059 DEBUG Fetching and updating data
+2024-07-03 10:30:41,059 DEBUG Establishing database connection
+2024-07-03 10:30:41,059 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-03 10:30:41,075 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-03 10:30:41,075 INFO Total Scan Count: 52, Previous Day Scan Count: 0, Scan Count: 52, Day of Week: Wednesday
+2024-07-03 10:30:41,075 DEBUG Establishing database connection
+2024-07-03 10:30:41,075 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-03 10:30:47,064 DEBUG Fetching and updating data
+2024-07-03 10:30:47,064 DEBUG Establishing database connection
+2024-07-03 10:30:47,064 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-03 10:30:47,076 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-03 10:30:47,076 INFO Total Scan Count: 52, Previous Day Scan Count: 0, Scan Count: 52, Day of Week: Wednesday
+2024-07-03 10:30:47,076 DEBUG Establishing database connection
+2024-07-03 10:30:47,092 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-03 10:31:41,092 DEBUG Fetching and updating data
+2024-07-03 10:31:41,092 DEBUG Establishing database connection
+2024-07-03 10:31:41,092 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-03 10:31:41,108 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-03 10:31:41,108 INFO Total Scan Count: 52, Previous Day Scan Count: 0, Scan Count: 52, Day of Week: Wednesday
+2024-07-03 10:31:41,108 DEBUG Establishing database connection
+2024-07-03 10:31:41,108 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-03 10:31:47,112 DEBUG Fetching and updating data
+2024-07-03 10:31:47,112 DEBUG Establishing database connection
+2024-07-03 10:31:47,112 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-03 10:31:47,112 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-03 10:31:47,112 INFO Total Scan Count: 52, Previous Day Scan Count: 0, Scan Count: 52, Day of Week: Wednesday
+2024-07-03 10:31:47,112 DEBUG Establishing database connection
+2024-07-03 10:31:47,134 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-03 10:32:41,126 DEBUG Fetching and updating data
+2024-07-03 10:32:41,126 DEBUG Establishing database connection
+2024-07-03 10:32:41,126 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-03 10:32:41,142 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-03 10:32:41,142 INFO Total Scan Count: 52, Previous Day Scan Count: 0, Scan Count: 52, Day of Week: Wednesday
+2024-07-03 10:32:41,142 DEBUG Establishing database connection
+2024-07-03 10:32:41,158 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-03 10:32:47,149 DEBUG Fetching and updating data
+2024-07-03 10:32:47,149 DEBUG Establishing database connection
+2024-07-03 10:32:47,149 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-03 10:32:47,149 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-03 10:32:47,149 INFO Total Scan Count: 52, Previous Day Scan Count: 0, Scan Count: 52, Day of Week: Wednesday
+2024-07-03 10:32:47,149 DEBUG Establishing database connection
+2024-07-03 10:32:47,165 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-03 10:33:41,178 DEBUG Fetching and updating data
+2024-07-03 10:33:41,178 DEBUG Establishing database connection
+2024-07-03 10:33:41,182 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-03 10:33:41,182 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-03 10:33:41,182 INFO Total Scan Count: 52, Previous Day Scan Count: 0, Scan Count: 52, Day of Week: Wednesday
+2024-07-03 10:33:41,182 DEBUG Establishing database connection
+2024-07-03 10:33:41,198 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-03 10:33:47,184 DEBUG Fetching and updating data
+2024-07-03 10:33:47,184 DEBUG Establishing database connection
+2024-07-03 10:33:47,184 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-03 10:33:47,184 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-03 10:33:47,184 INFO Total Scan Count: 52, Previous Day Scan Count: 0, Scan Count: 52, Day of Week: Wednesday
+2024-07-03 10:33:47,184 DEBUG Establishing database connection
+2024-07-03 10:33:47,195 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-03 10:34:41,200 DEBUG Fetching and updating data
+2024-07-03 10:34:41,200 DEBUG Establishing database connection
+2024-07-03 10:34:41,200 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-03 10:34:41,216 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-03 10:34:41,216 INFO Total Scan Count: 52, Previous Day Scan Count: 0, Scan Count: 52, Day of Week: Wednesday
+2024-07-03 10:34:41,216 DEBUG Establishing database connection
+2024-07-03 10:34:41,223 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-03 10:34:47,212 DEBUG Fetching and updating data
+2024-07-03 10:34:47,212 DEBUG Establishing database connection
+2024-07-03 10:34:47,212 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-03 10:34:47,212 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-03 10:34:47,212 INFO Total Scan Count: 52, Previous Day Scan Count: 0, Scan Count: 52, Day of Week: Wednesday
+2024-07-03 10:34:47,212 DEBUG Establishing database connection
+2024-07-03 10:34:47,244 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-03 10:35:41,239 DEBUG Fetching and updating data
+2024-07-03 10:35:41,239 DEBUG Establishing database connection
+2024-07-03 10:35:41,239 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-03 10:35:41,239 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-03 10:35:41,255 INFO Total Scan Count: 52, Previous Day Scan Count: 0, Scan Count: 52, Day of Week: Wednesday
+2024-07-03 10:35:41,255 DEBUG Establishing database connection
+2024-07-03 10:35:41,255 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-03 10:35:47,261 DEBUG Fetching and updating data
+2024-07-03 10:35:47,261 DEBUG Establishing database connection
+2024-07-03 10:35:47,261 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-03 10:35:47,261 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-03 10:35:47,276 INFO Total Scan Count: 52, Previous Day Scan Count: 0, Scan Count: 52, Day of Week: Wednesday
+2024-07-03 10:35:47,276 DEBUG Establishing database connection
+2024-07-03 10:35:47,276 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-03 10:36:41,260 DEBUG Fetching and updating data
+2024-07-03 10:36:41,260 DEBUG Establishing database connection
+2024-07-03 10:36:41,260 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-03 10:36:41,260 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-03 10:36:41,260 INFO Total Scan Count: 52, Previous Day Scan Count: 0, Scan Count: 52, Day of Week: Wednesday
+2024-07-03 10:36:41,260 DEBUG Establishing database connection
+2024-07-03 10:36:41,260 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
+2024-07-03 10:36:47,292 DEBUG Fetching and updating data
+2024-07-03 10:36:47,292 DEBUG Establishing database connection
+2024-07-03 10:36:47,292 DEBUG Starting new HTTP connection (1): localhost:5000
+2024-07-03 10:36:47,298 DEBUG http://localhost:5000 "GET /api/Scans/GetScanCount HTTP/1.1" 200 None
+2024-07-03 10:36:47,298 INFO Total Scan Count: 52, Previous Day Scan Count: 0, Scan Count: 52, Day of Week: Wednesday
+2024-07-03 10:36:47,298 DEBUG Establishing database connection
+2024-07-03 10:36:47,315 INFO Executed query: UPDATE WebHit SET ScanCount = ? WHERE DayOfWeek = ?
