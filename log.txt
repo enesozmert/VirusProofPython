@@ -564,3 +564,10 @@
    WARNING: This is a development server. Do not use it in a production deployment.
 2024-08-29 16:42:13,801 INFO  * Running on http://10.0.2.15:7777/ (Press CTRL+C to quit)
 2024-08-29 16:42:13,802 INFO  * Restarting with stat
+2024-08-29 16:42:14,532 INFO Starting fetch_and_update_data
+2024-08-29 16:42:14,532 DEBUG Fetching and updating data
+2024-08-29 16:42:14,532 DEBUG Establishing database connection
+2024-08-29 16:42:14,806 ERROR Error in fetch_and_update_data: ('28000', "[28000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Login failed for user 'vpdbsecure'. (18456) (SQLDriverConnect)")
+2024-08-29 16:42:14,807 INFO Starting Flask app
+2024-08-29 16:42:14,824 WARNING  * Debugger is active!
+2024-08-29 16:42:14,897 INFO  * Debugger PIN: 623-395-251
