@@ -2,10 +2,11 @@ import pyodbc
 import logging
 
 conn_str = ('DRIVER={ODBC Driver 17 for SQL Server};'
-            'SERVER=DESKTOP-2AMC2ST\\SQLEXPRESS;'
+            'SERVER=94.154.34.227;'
             'DATABASE=VirusProofs;'
-            'Trusted_Connection=yes;'
-            'TrustServerCertificate=yes')
+            'UID=vpdbsecure;'
+            'PWD=\"lqT1*XTC#@p=1Ke.PaOZ1_m_%ynd&;[yEGe+8o6?)yh9&\";'
+            'TrustServerCertificate=yes;')
 
 def get_connection():
     logging.debug('Establishing database connection')
