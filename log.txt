@@ -748,3 +748,26 @@
    WARNING: This is a development server. Do not use it in a production deployment.
 2024-08-30 09:08:18,715 INFO  * Running on http://10.0.2.15:7777/ (Press CTRL+C to quit)
 2024-08-30 09:08:18,750 INFO  * Restarting with stat
+2024-08-30 09:08:20,053 INFO Starting fetch_and_update_data
+2024-08-30 09:08:20,060 DEBUG Fetching and updating data
+2024-08-30 09:08:20,069 DEBUG Establishing database connection
+2024-08-30 09:08:20,398 ERROR Error in fetch_and_update_data: ('28000', "[28000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Login failed for user 'vpdbsecure'. (18456) (SQLDriverConnect)")
+2024-08-30 09:08:20,399 INFO Starting Flask app
+2024-08-30 09:08:20,426 WARNING  * Debugger is active!
+2024-08-30 09:08:20,520 INFO  * Debugger PIN: 848-617-098
+2024-08-30 15:49:09,000 INFO Starting fetch_and_update_data
+2024-08-30 15:49:09,011 DEBUG Fetching and updating data
+2024-08-30 15:49:09,015 DEBUG Establishing database connection
+2024-08-30 15:49:10,415 ERROR Error in fetch_and_update_data: ('28000', "[28000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Login failed for user 'vpdbsecure'. (18456) (SQLDriverConnect)")
+2024-08-30 15:49:10,416 INFO Starting Flask app
+2024-08-30 15:49:10,580 WARNING  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2024-08-30 15:49:10,603 INFO  * Running on http://10.0.2.15:7777/ (Press CTRL+C to quit)
+2024-08-30 15:49:10,606 INFO  * Restarting with stat
+2024-08-30 15:49:11,418 INFO Starting fetch_and_update_data
+2024-08-30 15:49:11,422 DEBUG Fetching and updating data
+2024-08-30 15:49:11,429 DEBUG Establishing database connection
+2024-08-30 15:49:16,935 ERROR Error in fetch_and_update_data: ('28000', "[28000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Login failed for user 'vpdbsecure'. (18456) (SQLDriverConnect)")
+2024-08-30 15:49:16,936 INFO Starting Flask app
+2024-08-30 15:49:16,973 WARNING  * Debugger is active!
+2024-08-30 15:49:17,151 INFO  * Debugger PIN: 236-130-351
