@@ -4,6 +4,9 @@ import pandas as pd
 from database import fetch_data
 import logging
 
+logging.basicConfig(filename='/vagrant/pythonapp.log', level=logging.DEBUG,
+                    format='%(asctime)s %(levelname)s %(message)s')
+
 def create_plot():
     try:
         query = "SELECT DayOfWeek, ScanCount, PreviousWeekScanCount FROM WebHit"
@@ -44,8 +47,6 @@ def create_plot():
         )
 
         fig = go.Figure(data=[trace1, trace2], layout=layout)
-
-        # HTML dosyasını kaydet
         pio.write_html(fig, file='templates/plot.html', auto_open=False)
 
         logging.info('Plot created and saved to templates/plot.html')

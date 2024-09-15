@@ -5,6 +5,9 @@ import logging
 from database import execute_query
 from database import get_connection
 
+logging.basicConfig(filename='/vagrant/pythonapp.log', level=logging.DEBUG,
+                    format='%(asctime)s %(levelname)s %(message)s')
+
 class FetchAndUpdateData:
     def __init__(self):
         self.timer = None

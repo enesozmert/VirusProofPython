@@ -1,11 +1,14 @@
 import pyodbc
 import logging
 
+logging.basicConfig(filename='/vagrant/pythonapp.log', level=logging.DEBUG,
+                    format='%(asctime)s %(levelname)s %(message)s')
+
 conn_str = ('DRIVER={ODBC Driver 17 for SQL Server};'
             'SERVER=94.154.34.227;'
             'DATABASE=VirusProofs;'
             'UID=vpdbsecure;'
-            'PWD=\"lqT1*XTC#@p=1Ke.PaOZ1_m_%ynd&;[yEGe+8o6?)yh9&\";'
+            'PWD=lqT1*XTC#@p=1Ke.PaOZ1_m_%ynd&[yEGe+8o6?)yh9&;'
             'TrustServerCertificate=yes;')
 
 def get_connection():
@@ -13,6 +16,7 @@ def get_connection():
     return pyodbc.connect(conn_str)
 
 def execute_query(query, params=None):
+    conn = None
     try:
         conn = get_connection()
         cursor = conn.cursor()
@@ -25,10 +29,13 @@ def execute_query(query, params=None):
     except Exception as e:
         logging.error(f'Error executing query: {e}')
     finally:
-        cursor.close()
-        conn.close()
+        if conn is not None:
+            if 'cursor' in locals():
+                cursor.close()
+            conn.close()
 
 def fetch_data(query, params=None):
+    conn = None
     try:
         conn = get_connection()
         cursor = conn.cursor()
@@ -42,5 +49,7 @@ def fetch_data(query, params=None):
     except Exception as e:
         logging.error(f'Error fetching data: {e}')
     finally:
-        cursor.close()
-        conn.close()
+        if conn is not None:
+            if 'cursor' in locals():
+                cursor.close()
+            conn.close()
