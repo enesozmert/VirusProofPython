@@ -18,6 +18,6 @@ def run_query_for_chart():
         except Exception as e:
             logging.error(f"An error occurred: {e}")
 
-        time.sleep(30)
+        time.sleep(60)
         with open('queryforchart.txt', 'a') as file:
             file.write(f"Total entries in scans table: {total_entries}\n")

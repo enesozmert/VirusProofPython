@@ -1,20 +1,25 @@
 import pyodbc
 import logging
+import hashlib
 
+# Loglama ayarları, tüm loglar '/vagrant/pythonapp.log' dosyasına yazılacak
 logging.basicConfig(filename='/vagrant/pythonapp.log', level=logging.DEBUG,
                     format='%(asctime)s %(levelname)s %(message)s')
 
+# Veritabanı bağlantı dizesi
 conn_str = ('DRIVER={ODBC Driver 17 for SQL Server};'
             'SERVER=94.154.34.227;'
             'DATABASE=VirusProofs;'
-            'UID=vpdbsecure;'
-            'PWD=lqT1*XTC#@p=1Ke.PaOZ1_m_%ynd&[yEGe+8o6?)yh9&;'
+            'UID=vpdbsecurepython;'  # Yeni kullanıcı adı
+            'PWD=vpdbSecurePython@2024!Password#7$;'  # Şifre doğrudan burada
             'TrustServerCertificate=yes;')
 
+# Veritabanı bağlantısını kuran fonksiyon
 def get_connection():
     logging.debug('Establishing database connection')
     return pyodbc.connect(conn_str)
 
+# Veritabanı sorgusu çalıştıran fonksiyon
 def execute_query(query, params=None):
     conn = None
     try:
@@ -34,6 +39,7 @@ def execute_query(query, params=None):
                 cursor.close()
             conn.close()
 
+# Veritabanından veri çeken fonksiyon
 def fetch_data(query, params=None):
     conn = None
     try:
