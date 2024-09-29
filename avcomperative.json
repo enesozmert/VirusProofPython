@@ -1,0 +1,346 @@
+[
+    {
+        "name": "bitdefender",
+        "score": 10
+    },
+    {
+        "name": "bitdefenderfalx",
+        "score": 10
+    },
+    {
+        "name": "bitdefender2",
+        "score": 10
+    },
+    {
+        "name": "symantec",
+        "score": 10
+    },
+    {
+        "name": "symantecmobileinsight",
+        "score": 10
+    },
+    {
+        "name": "kaspersky2",
+        "score": 10
+    },
+    {
+        "name": "kasperskyantivirus",
+        "score": 10
+    },
+    {
+        "name": "mcafee",
+        "score": 10
+    },
+    {
+        "name": "mcafeed",
+        "score": 10
+    },
+    {
+        "name": "trendmicroantivirus",
+        "score": 10
+    },
+    {
+        "name": "trendmicrohousecall",
+        "score": 10
+    },
+    {
+        "name": "trendmicro2",
+        "score": 10
+    },
+    {
+        "name": "esetnod32",
+        "score": 9
+    },
+    {
+        "name": "avira",
+        "score": 9
+    },
+    {
+        "name": "sophos",
+        "score": 9
+    },
+    {
+        "name": "microsoft",
+        "score": 9
+    },
+    {
+        "name": "fsecureantivirus",
+        "score": 9
+    },
+    {
+        "name": "fsecure2",
+        "score": 9
+    },
+    {
+        "name": "gdata",
+        "score": 9
+    },
+    {
+        "name": "gdata2",
+        "score": 9
+    },
+    {
+        "name": "malwarebytes",
+        "score": 9
+    },
+    {
+        "name": "avg",
+        "score": 9
+    },
+    {
+        "name": "avast",
+        "score": 9
+    },
+    {
+        "name": "avast2",
+        "score": 9
+    },
+    {
+        "name": "avastmobile",
+        "score": 9
+    },
+    {
+        "name": "panda",
+        "score": 8
+    },
+    {
+        "name": "ahnlabv3",
+        "score": 8
+    },
+    {
+        "name": "catquickheal",
+        "score": 8
+    },
+    {
+        "name": "zonealarm",
+        "score": 8
+    },
+    {
+        "name": "crowdstrike_ml",
+        "score": 8
+    },
+    {
+        "name": "crowdstrike",
+        "score": 8
+    },
+    {
+        "name": "ikarus",
+        "score": 8
+    },
+    {
+        "name": "ikarus2",
+        "score": 8
+    },
+    {
+        "name": "drweb",
+        "score": 7
+    },
+    {
+        "name": "drweb2",
+        "score": 7
+    },
+    {
+        "name": "cynet",
+        "score": 7
+    },
+    {
+        "name": "Bkav",
+        "score": 7
+    },
+    {
+        "name": "vipre",
+        "score": 7
+    },
+    {
+        "name": "xcitium",
+        "score": 7
+    },
+    {
+        "name": "acronis",
+        "score": 7
+    },
+    {
+        "name": "fireeye",
+        "score": 6
+    },
+    {
+        "name": "tehtris",
+        "score": 6
+    },
+    {
+        "name": "sentinelone",
+        "score": 9
+    },
+    {
+        "name": "webroot",
+        "score": 6
+    },
+    {
+        "name": "gridinsoft",
+        "score": 6
+    },
+    {
+        "name": "lionic",
+        "score": 6
+    },
+    {
+        "name": "nano",
+        "score": 6
+    },
+    {
+        "name": "vba32v2",
+        "score": 6
+    },
+    {
+        "name": "vba32",
+        "score": 6
+    },
+    {
+        "name": "virit",
+        "score": 6
+    },
+    {
+        "name": "skyhigh",
+        "score": 5
+    },
+    {
+        "name": "apex",
+        "score": 5
+    },
+    {
+        "name": "paloalto",
+        "score": 5
+    },
+    {
+        "name": "varist",
+        "score": 5
+    },
+    {
+        "name": "superantispyware",
+        "score": 5
+    },
+    {
+        "name": "tachyon",
+        "score": 5
+    },
+    {
+        "name": "trapmine",
+        "score": 4
+    },
+    {
+        "name": "trustlook",
+        "score": 4
+    },
+    {
+        "name": "virobot",
+        "score": 4
+    },
+    {
+        "name": "yandex",
+        "score": 4
+    },
+    {
+        "name": "zillya",
+        "score": 4
+    },
+    {
+        "name": "zoner",
+        "score": 4
+    },
+    {
+        "name": "alibabacloud",
+        "score": 4
+    },
+    {
+        "name": "alibaba",
+        "score": 4
+    },
+    {
+        "name": "alyac",
+        "score": 4
+    },
+    {
+        "name": "antiyavl",
+        "score": 3
+    },
+    {
+        "name": "arcabit",
+        "score": 3
+    },
+    {
+        "name": "baidu",
+        "score": 3
+    },
+    {
+        "name": "clamav2",
+        "score": 8
+    },
+    {
+        "name": "clamav",
+        "score": 8
+    },
+    {
+        "name": "cmc",
+        "score": 3
+    },
+    {
+        "name": "microworldescan",
+        "score": 3
+    },
+    {
+        "name": "microworldescan2",
+        "score": 3
+    },
+    {
+        "name": "fortinet2",
+        "score": 3
+    },
+    {
+        "name": "fortinet",
+        "score": 3
+    },
+    {
+        "name": "google",
+        "score": 3
+    },
+    {
+        "name": "jiangmin",
+        "score": 2
+    },
+    {
+        "name": "k7av",
+        "score": 2
+    },
+    {
+        "name": "k7antiVirus",
+        "score": 2
+    },
+    {
+        "name": "k7gw",
+        "score": 2
+    },
+    {
+        "name": "kingsoft",
+        "score": 2
+    },
+    {
+        "name": "maxsecure",
+        "score": 2
+    },
+    {
+        "name": "sangfor",
+        "score": 2
+    },
+    {
+        "name": "cylance",
+        "score": 1
+    },
+    {
+        "name": "deepinstinct",
+        "score": 1
+    },
+    {
+        "name": "elastic",
+        "score": 1
+    }
+]

@@ -1,6 +1,5 @@
 import pyodbc
 import logging
-import hashlib
 
 # Loglama ayarları, tüm loglar '/vagrant/pythonapp.log' dosyasına yazılacak
 logging.basicConfig(filename='/vagrant/pythonapp.log', level=logging.DEBUG,
@@ -39,21 +38,25 @@ def execute_query(query, params=None):
                 cursor.close()
             conn.close()
 
-# Veritabanından veri çeken fonksiyon
 def fetch_data(query, params=None):
     conn = None
     try:
+        logging.debug(f"Veritabanına bağlanılıyor... Query: {query}")
         conn = get_connection()
+        logging.debug("Bağlantı başarılı.")
         cursor = conn.cursor()
+        logging.debug(f"Query çalıştırılıyor: {query}")
         if params:
             cursor.execute(query, params)
         else:
             cursor.execute(query)
         data = cursor.fetchall()
+        logging.debug(f"Veriler çekildi: {data}")
         logging.info(f'Fetched data with query: {query}')
         return data
     except Exception as e:
         logging.error(f'Error fetching data: {e}')
+        logging.debug(f"Hata oluştu: {e}")
     finally:
         if conn is not None:
             if 'cursor' in locals():
