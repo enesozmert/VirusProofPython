@@ -7,6 +7,7 @@ import subprocess
 from database import execute_query, fetch_data
 from queryforchart import get_total_scan_data
 from weekly_scan_data import get_weekly_scan_data
+from algorithm import main
 
 # Loglama ayarları
 logging.basicConfig(
@@ -68,21 +69,12 @@ def total_scan_data():
 @app.route('/api/algorithm', methods=['GET'])
 def run_algorithm():
     logging.info("API called to run algorithm...")
-    try:
-        # Algorithm'i çalıştır
-        updated = main()  # True dönerse veri güncellenmiştir, False dönerse güncel dosya kullanılmıştır
-
-        if updated:
-            logging.info("Algorithm script executed successfully.")
-            return jsonify({"message": "Algorithm executed successfully"}), 200
-        else:
-            logging.info("No need to run algorithm, data is up-to-date.")
-            return jsonify({"message": "Data is already up-to-date"}), 200
-
-    except Exception as e:
-        logging.error(f"Error running algorithm script: {e}")
-        return jsonify({"error": "Failed to run algorithm"}), 500
-
+    result = main()  # rank.py'yi çağıran algorithm.py'deki main fonksiyonunu çalıştır
+    if "No need to run algorithm" in result:
+        return jsonify({"message": "No need to run algorithm, data is up-to-date"}), 200
+    else:
+        return jsonify({"message": result}), 200
+    
 if __name__ == '__main__':
     logging.info('Starting Flask app')
 
