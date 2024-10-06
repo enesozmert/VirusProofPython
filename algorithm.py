@@ -18,7 +18,10 @@ def main(scan_guid):
     
     logging.info(f"Calculate result: {calculate_result}")  # Sonucu logla
     
-    return update_result, calculate_result  # Her iki sonucu döndür
+    return {
+        "message": update_result,  # update_result 'message' altında döndürülüyor
+        "data": int(calculate_result)   # calculate_result 'data' altında döndürülüyor
+    }
 
 if __name__ == "__main__":
     # Test etmek için bir scan_guid verin

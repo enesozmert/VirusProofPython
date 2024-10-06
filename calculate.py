@@ -76,7 +76,7 @@ def calculate_score(scan_data, av_ranks):
     # Final skoru tam sayıya yuvarlayarak döndür
     final_score = round((total_score / total_engines) * 100)
     
-    return f"Final Score: {final_score}"  # Tam sayı formatında döndür
+    return int(final_score)  # Tam sayı formatında döndür
 
 
 def run_calculate(scan_guid):
@@ -94,7 +94,7 @@ def run_calculate(scan_guid):
     
     # Puanı hesapla
     final_score = calculate_score(scan_data, av_ranks)
-    return f"Final Score: {final_score}"
+    return f"{final_score}"
 
 # Eğer bu dosya direkt çalıştırılırsa
 if __name__ == "__main__":

@@ -32,7 +32,7 @@ def signal_handler(sig, frame):
 signal.signal(signal.SIGINT, signal_handler)
 print("Signal handler ayarlandı.")  # Signal handler'ın ayarlandığını kontrol ediyoruz
 
-@app.route('/api/scan-data', methods=['GET'])
+@app.route('/api/scan-data-haftalik', methods=['GET'])
 def scan_data():
     logging.info("API request received for scan data.")
     print("API isteği alındı.")  # API isteği alındığını kontrol ediyoruz
@@ -81,8 +81,7 @@ def run_algorithm():
     if "No need to run algorithm" in result:
         return jsonify({"message": "No need to run algorithm, data is up-to-date"}), 200
     else:
-        return jsonify({"message": result}), 200
-    
+        return jsonify({"result": result}), 200
 if __name__ == '__main__':
     logging.info('Starting Flask app')
 
