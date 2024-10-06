@@ -18,11 +18,16 @@ def main(scan_guid):
     
     logging.info(f"Calculate result: {calculate_result}")  # Sonucu logla
     
-    return {
-        "message": update_result,  # update_result 'message' altında döndürülüyor
-        "data": int(calculate_result)   # calculate_result 'data' altında döndürülüyor
+    if "Error" in calculate_result:
+        return {
+        "message": update_result,
+        "data": calculate_result  # Hata varsa int() yapmayın
     }
-
+    else:
+        return {
+        "message": update_result,
+        "data": int(calculate_result)  # Hata yoksa tam sayıya çevirin
+    }
 if __name__ == "__main__":
     # Test etmek için bir scan_guid verin
     test_scan_guid = "sample_scan_guid"  # Gerçek bir scanGuid kullanarak test edin
