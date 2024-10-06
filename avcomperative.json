@@ -342,5 +342,29 @@
     {
         "name": "elastic",
         "score": 1
+    },
+    {
+        "name": "metadefender",
+        "score": 10
+    },
+    {
+        "name": "ctx",
+        "score": 5
+    },
+    {
+        "name": "emsisoft",
+        "score": 4
+    },
+    {
+        "name": "rising",
+        "score": 3
+    },
+    {
+        "name": "huorong",
+        "score": 3
+    },
+    {
+        "name": "cyren",
+        "score": 2
     }
 ]

@@ -2,24 +2,27 @@ import logging
 from rank import run_rank_update  # Import the rank update function
 from calculate import run_calculate  # Import the calculate function
 
+
 # Log settings
 logging.basicConfig(filename='/vagrant/pythonapp.log', level=logging.DEBUG,
                     format='%(asctime)s %(levelname)s %(message)s')
 
-def main():
+def main(scan_guid):
     logging.info("Starting the algorithm (rank update)...")
+    update_result = run_rank_update()  # Rank güncellemesini çalıştır
     
-    # Run the rank update first
-    update_result = run_rank_update()
-    logging.info(update_result)  # Log the result from rank.py
+    logging.info(f"Rank update result: {update_result}")  # Sonucu logla
     
-    # Run the calculate process
-    logging.info("Starting the calculate process...")
-    calculate_result = run_calculate()  # Assuming this function is in calculate.py
-    logging.info(calculate_result)
+    logging.info(f"Starting the calculate process for scanGuid: {scan_guid}...")
+    calculate_result = run_calculate(scan_guid)  # Burada hesaplama yapılıyor
     
-    return update_result, calculate_result
+    logging.info(f"Calculate result: {calculate_result}")  # Sonucu logla
+    
+    return update_result, calculate_result  # Her iki sonucu döndür
 
 if __name__ == "__main__":
-    result = main()
+    # Test etmek için bir scan_guid verin
+    test_scan_guid = "sample_scan_guid"  # Gerçek bir scanGuid kullanarak test edin
+    result = main(test_scan_guid)
     logging.info(f"Final result: {result}")  # Log the final result from both processes
+    print(result)

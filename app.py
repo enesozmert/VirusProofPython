@@ -1,4 +1,4 @@
-from flask import Flask, jsonify
+from flask import Flask, request, jsonify
 import signal
 import sys
 import logging
@@ -69,7 +69,15 @@ def total_scan_data():
 @app.route('/api/algorithm', methods=['GET'])
 def run_algorithm():
     logging.info("API called to run algorithm...")
-    result = main()  # rank.py'yi çağıran algorithm.py'deki main fonksiyonunu çalıştır
+    
+    # scanGuid parametresini isteğin query string'inden alıyoruz
+    scan_guid = request.args.get('scanGuid')
+    
+    if not scan_guid:
+        return jsonify({"error": "scanGuid parametresi eksik"}), 400
+    
+    result = main(scan_guid)  # scanGuid'i algorithm.py'deki main fonksiyonuna ilet
+    
     if "No need to run algorithm" in result:
         return jsonify({"message": "No need to run algorithm, data is up-to-date"}), 200
     else:
