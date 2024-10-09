@@ -9,6 +9,7 @@ from queryforchart import get_total_scan_data
 from weekly_scan_data import get_weekly_scan_data
 from algorithm import main
 from flask_cors import CORS
+from rank import run_rank_update
 
 # Loglama ayarları
 logging.basicConfig(
@@ -67,26 +68,21 @@ def total_scan_data():
         print("Veri çekilemedi.")  # Veri çekilemezse hata mesajı
         return jsonify({"error": "Total scan data could not be fetched"}), 500
 
-@app.route('/api/algorithm', methods=['GET'])
+@app.route("/api/algorithm", methods=["GET"])
 def run_algorithm():
-    logging.info("API called to run algorithm...")
-    
-    # scanGuid parametresini isteğin query string'inden alıyoruz
     scan_guid = request.args.get('scanGuid')
     
     if not scan_guid:
         return jsonify({"error": "scanGuid parametresi eksik"}), 400
-    
+
     result = main(scan_guid)  # scanGuid'i algorithm.py'deki main fonksiyonuna ilet
-    
-    if "No need to run algorithm" in result:
-        return jsonify({"message": "No need to run algorithm, data is up-to-date"}), 200
-    else:
-        return jsonify({
-            "rank_update_message": result["message"],  # Rank güncelleme mesajı
-            "calculation_result": result["data"]       # Hesaplama sonucu
-        }), 200
-    
+    return jsonify(result), 200
+
+@app.route("/api/rank-update", methods=["POST"])
+def update_ranks():
+    result = run_rank_update()
+    return jsonify({"message": result}), 200
+
 # CORS ayarları
 CORS(app, resources={r"/*": {"origins": "*"}}, supports_credentials=True)
 
