@@ -2,6 +2,7 @@ import logging
 from rank import run_rank_update  # Import the rank update function
 from calculate import run_calculate  # Import the calculate function
 
+
 # Log settings
 logging.basicConfig(filename='/vagrant/pythonapp.log', level=logging.DEBUG,
                     format='%(asctime)s %(levelname)s %(message)s')
@@ -17,20 +18,17 @@ def main(scan_guid):
     
     logging.info(f"Calculate result: {calculate_result}")  # Sonucu logla
     
-    # Eğer calculate_result bir dict ise içinden data alanını çekiyoruz
-    if isinstance(calculate_result, dict) and 'data' in calculate_result:
+    if isinstance(calculate_result, dict):
+        # Eğer calculate_result bir dict ise, doğrudan döndür
         return {
-            "result": {
-                "data": calculate_result['data'],  # Burada data kısmını integer olarak alıyoruz
-                "message": "Algorithm executed successfully"
-            }
+            "message": update_result,
+            "data": calculate_result
         }
     else:
+        # Eğer int'e dönüştürülebilecek bir şeyse int'e çevir
         return {
-            "result": {
-                "data": int(calculate_result),  # Eğer dict değilse doğrudan integer'a çeviriyoruz
-                "message": "Algorithm executed successfully"
-            }
+            "message": update_result,
+            "data": int(calculate_result)
         }
 
 if __name__ == "__main__":
