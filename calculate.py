@@ -14,12 +14,10 @@ def fetch_scan_data(scanGuid):
     logging.info(f"Fetching scan data for scanGuid: {scanGuid}")
     api_url = f"http://localhost:5000/api/ScanDataResults/getfieldmappingresultdata?scanGuid={scanGuid}"
     try:
-        # POST yerine GET metodu ile istek yap
         response = requests.get(api_url)
         response.raise_for_status()  # Hata varsa fırlat
         data = response.json()
         
-        # Gelen veriyi JSON stringinden objeye çevir
         scan_data_str = data["data"][0]  # API'den gelen ilk kayıt
         scan_data = json.loads(scan_data_str)
         
@@ -39,45 +37,41 @@ def load_av_comparative_data():
         return []
 
 def calculate_score(scan_data, av_ranks):
-    total_score = 0
-    total_engines = 0
-    log_unranked = []  # Rank olmayanları log için tutacağız
+    score = 100  # Start with 100 points
+    log_unranked = []
     
-    for av_name, av_result in scan_data.items():
-        av_status = av_result.get("category", "")
-
-        if av_status and av_status.lower() in ["clean", "file type unsupported"]:
-            score = 1  # Clean'ler + puan
-        else:
-            score = -1  # Diğerleri - puan
+    for av_name, details in scan_data.items():
+        category = details['category'].lower()
         
-        # 'name' alanını kullanarak antivirüs adı ile eşleştirme yapıyoruz
+        # Skip "clean" or "file type unsupported"
+        if category in ['clean', 'file type unsupported']:
+            logging.info(f"Skipping {av_name} - Category: {category}")
+            continue
+        
+        # Find the antivirus rank
         rank_info = None
         for rank in av_ranks:
-            if rank['name'].lower() == av_name.lower():  # Antivirüs adını kontrol et
+            if rank['name'].lower() == av_name.lower():
                 rank_info = rank
                 break
         
         if not rank_info:
             log_unranked.append(av_name)
-            continue  # Rank'ı olmayan antivirüsü geçiyoruz
+            logging.warning(f"AV rank not found for {av_name}")
+            continue
         
-        rank_multiplier = rank_info['score'] / 10  # 10 üzerinden normalize ediyoruz
-        total_score += score * rank_multiplier
-        total_engines += 1
-
-    # Loglamak için rank'ı olmayan antivirüsler
-    if log_unranked:
-        logging.info(f"Rank bilgisi olmayan antivirüs motorları: {', '.join(log_unranked)}")
+        # Apply a penalty based on rank
+        penalty = rank_info.get('score', 0)  # Assuming score is stored
+        logging.info(f"Applying penalty for {av_name}: {penalty}")
+        score -= penalty  # Deduct penalty from score
     
-    if total_engines == 0:
-        return 0  # Eğer antivirüs motoru yoksa sonuç 0
+    # Ensure the score doesn't go below 0
+    score = max(score, 0)
     
-    # Final skoru tam sayıya yuvarlayarak döndür
-    final_score = round((total_score / total_engines) * 100)
+    # Log the final score
+    logging.info(f"Final Score after calculation: {score}")
     
-    return int(final_score)  # Tam sayı formatında döndür
-
+    return {"score": score, "details": log_unranked}  # Score ve logları döndür
 
 def run_calculate(scan_guid):
     logging.info(f"Running calculate process for scanGuid: {scan_guid}")
@@ -85,16 +79,20 @@ def run_calculate(scan_guid):
     # Scan verilerini çek
     scan_data = fetch_scan_data(scan_guid)
     if scan_data is None:
-        return "Error fetching scan data"
+        return {"message": "Error fetching scan data", "data": None}
     
     # AV Comparative verilerini yükle
     av_ranks = load_av_comparative_data()
     if not av_ranks:
-        return "Error loading AV comparative data"
+        return {"message": "Error loading AV comparative data", "data": None}
     
     # Puanı hesapla
-    final_score = calculate_score(scan_data, av_ranks)
-    return f"{final_score}"
+    final_result = calculate_score(scan_data, av_ranks)
+    
+    # final_result içindeki score'u tam sayıya çevirelim
+    final_score = final_result.get("score", 0)
+    
+    return {"message": "Algorithm executed successfully", "data": final_score}
 
 # Eğer bu dosya direkt çalıştırılırsa
 if __name__ == "__main__":
@@ -102,3 +100,4 @@ if __name__ == "__main__":
     result = run_calculate(test_scanGuid)
     logging.info(f"Test result: {result}")
     print(result)
+

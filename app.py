@@ -81,7 +81,11 @@ def run_algorithm():
     if "No need to run algorithm" in result:
         return jsonify({"message": "No need to run algorithm, data is up-to-date"}), 200
     else:
-        return jsonify({"result": result}), 200
+        return jsonify({
+            "rank_update_message": result["message"],  # Rank güncelleme mesajı
+            "calculation_result": result["data"]       # Hesaplama sonucu
+        }), 200
+    
 if __name__ == '__main__':
     logging.info('Starting Flask app')
 
