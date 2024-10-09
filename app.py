@@ -8,6 +8,7 @@ from database import execute_query, fetch_data
 from queryforchart import get_total_scan_data
 from weekly_scan_data import get_weekly_scan_data
 from algorithm import main
+from flask_cors import CORS
 
 # Loglama ayarları
 logging.basicConfig(
@@ -86,6 +87,16 @@ def run_algorithm():
             "calculation_result": result["data"]       # Hesaplama sonucu
         }), 200
     
+# CORS ayarları
+CORS(app, resources={r"/*": {"origins": "*"}}, supports_credentials=True)
+
+@app.after_request
+def after_request(response):
+    response.headers.add('Access-Control-Allow-Origin', '*')
+    response.headers.add('Access-Control-Allow-Headers', 'Content-Type,Authorization')
+    response.headers.add('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS')
+    return response
+
 if __name__ == '__main__':
     logging.info('Starting Flask app')
 
