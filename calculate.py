@@ -37,41 +37,100 @@ def load_av_comparative_data():
         return []
 
 def calculate_score(scan_data, av_ranks):
-    score = 100  # Start with 100 points
-    log_unranked = []
-    
+    initial_score = 100  # Başlangıç puanı
+    total_rank_score = 0  # AV rank toplamı
+    log_unranked = []  # Rank bulunamayan AV'ler
+    av_rank_dict = {}  # AV ranklarını saklayan dict
+
+    # Önce tüm AV ranklarının toplamını 100 puana oranla normalize edelim
+    for rank in av_ranks:
+        av_name = rank['name'].lower()
+        score = rank.get('score', 0)
+        total_rank_score += score
+        av_rank_dict[av_name] = score  # AV isimlerine göre rankları sakla
+
+    logging.info(f"Total AV rank score before normalization: {total_rank_score}")
+
+    # Rank toplamı 100'e oranlanarak normalize ediliyor
+    if total_rank_score > 0:
+        normalization_factor = 100 / total_rank_score
+    else:
+        normalization_factor = 1  # Eğer toplam 0 ise, normalization yapılmaz
+
+    logging.info(f"Normalization factor: {normalization_factor}")
+
+    # Skor hesaplama
+    score = initial_score
     for av_name, details in scan_data.items():
         category = details['category'].lower()
-        
-        # Skip "clean" or "file type unsupported"
+
+        # Clean ve file type unsupported olanları atla
         if category in ['clean', 'file type unsupported']:
             logging.info(f"Skipping {av_name} - Category: {category}")
             continue
-        
-        # Find the antivirus rank
-        rank_info = None
-        for rank in av_ranks:
-            if rank['name'].lower() == av_name.lower():
-                rank_info = rank
-                break
-        
-        if not rank_info:
+
+        # Antivirüs rank'ini bul
+        rank_score = av_rank_dict.get(av_name.lower(), None)
+        if rank_score is None:
             log_unranked.append(av_name)
             logging.warning(f"AV rank not found for {av_name}")
             continue
-        
-        # Apply a penalty based on rank
-        penalty = rank_info.get('score', 0)  # Assuming score is stored
-        logging.info(f"Applying penalty for {av_name}: {penalty}")
-        score -= penalty  # Deduct penalty from score
-    
-    # Ensure the score doesn't go below 0
-    score = max(score, 0)
-    
-    # Log the final score
+
+        # Normalize edilmiş rank skorunu kullanarak penaltı uygula
+        normalized_penalty = rank_score * normalization_factor
+        logging.info(f"Applying penalty for {av_name}: {normalized_penalty}")
+        score -= normalized_penalty
+
+    # Skorun 0'ın altına inmesini veya 100'ü geçmesini engelle
+    score = max(min(score, 100), 0)
+
+    # Log the final score and unranked AVs
     logging.info(f"Final Score after calculation: {score}")
-    
-    return {"score": score, "details": log_unranked}  # Score ve logları döndür
+    logging.info(f"Unranked AVs: {log_unranked}")
+
+    return {"score": round(score), "details": log_unranked}  # Score'u yuvarlayarak döndür
+
+def ispat():
+    """avcomperative.json'daki score'ların toplamının 100 puana normalize edilmesini ispat eder."""
+    # AV Comparative verilerini yükle
+    av_ranks = load_av_comparative_data()
+
+    if not av_ranks:
+        logging.error("Error: AV Comparative data could not be loaded for ispat function.")
+        return
+
+    # Rank toplamı hesaplama
+    total_rank_score = 0
+    av_rank_dict = {}
+
+    for rank in av_ranks:
+        av_name = rank['name'].lower()
+        score = rank.get('score', 0)
+        total_rank_score += score
+        av_rank_dict[av_name] = score  # AV isimlerine göre rankları sakla
+
+    logging.info(f"Total AV rank score before normalization: {total_rank_score}")
+
+    # Normalization factor hesaplama
+    if total_rank_score > 0:
+        normalization_factor = 100 / total_rank_score
+    else:
+        normalization_factor = 1  # Eğer toplam 0 ise normalization yapılmaz
+
+    logging.info(f"Normalization factor: {normalization_factor}")
+
+    # Rank'ları normalize edip toplamın yine 100'e eşit olduğunu kontrol etme
+    normalized_total_score = 0
+    for av_name, score in av_rank_dict.items():
+        normalized_score = score * normalization_factor
+        normalized_total_score += normalized_score
+        logging.info(f"{av_name.capitalize()} AV's normalized score: {normalized_score}")
+
+    # Loglarda sonuç
+    logging.info(f"Final normalized total score: {normalized_total_score}")
+
+    # Sonucu döndürelim
+    return normalized_total_score
 
 def run_calculate(scan_guid):
     logging.info(f"Running calculate process for scanGuid: {scan_guid}")
@@ -88,14 +147,15 @@ def run_calculate(scan_guid):
     
     # Puanı hesapla
     final_result = calculate_score(scan_data, av_ranks)
-    
+    ispat()
+
     # final_result içindeki score'u tam sayıya çevirelim
     final_score = final_result.get("score", 0)
     
     return {"message": "Algorithm executed successfully", "data": final_score}
 
 # Eğer bu dosya direkt çalıştırılırsa
-if __name__ == "__main__":
+if __name__ == "__main__":  # AV rank toplamını ispatla ve loglara yazdır
     test_scanGuid = "sample-scan-guid"
     result = run_calculate(test_scanGuid)
     logging.info(f"Test result: {result}")
