@@ -4,7 +4,11 @@ import logging
 import requests
 import json
 
-JSON_FILE = 'avcomperative.json'
+logging.basicConfig(filename='/vagrant/pythonapp.log', level=logging.DEBUG,
+                    format='%(asctime)s %(levelname)s %(message)s')
+# Dosya yolu ayarları
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))  # rank.py'nin bulunduğu dizin
+JSON_FILE = os.path.join(BASE_DIR, 'avcomperative.json')  # avcomperative.json'un tam yolu
 
 def is_json_file_recent():
     try:

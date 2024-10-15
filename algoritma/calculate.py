@@ -7,7 +7,7 @@ logging.basicConfig(filename='/vagrant/pythonapp.log', level=logging.DEBUG,
                     format='%(asctime)s %(levelname)s %(message)s')
 
 # JSON dosyasının yolu
-JSON_FILE = 'avcomperative.json'
+JSON_FILE = './rank/avcomperative.json'
 
 def fetch_scan_data(scanGuid):
     """scanGuid kullanarak API'den tarama verilerini getirir."""

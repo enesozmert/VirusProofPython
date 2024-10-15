@@ -1,5 +1,5 @@
 import logging
-from calculate import run_calculate  # Import the calculate function
+from .calculate import run_calculate  # Import the calculate function
 
 # Log settings
 logging.basicConfig(filename='/vagrant/pythonapp.log', level=logging.DEBUG,
