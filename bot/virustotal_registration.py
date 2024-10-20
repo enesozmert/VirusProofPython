@@ -25,51 +25,66 @@ def start_browser_with_proxy(proxy):
     # CAPTCHA çözen Buster eklentisini yüklemek için .crx dosyasının yolunu ekleyin
     chrome_options.add_extension("/path/to/buster_extension.crx")
 
-    # Brave veya Chrome tarayıcısı için ayarlar
+    # Tarayıcı için ayarlar
     chrome_options.add_argument("--disable-infobars")
     chrome_options.add_argument("--start-maximized")
+    chrome_options.add_argument("--headless")  # Tarayıcıyı headless modda başlatma (görünmez mod)
 
-    # WebDriver ile tarayıcıyı başlat
-    driver = webdriver.Chrome(ChromeDriverManager().install(), options=chrome_options)
-    logging.info(f"Browser started with proxy: {proxy}")
-    return driver
+    try:
+        driver = webdriver.Chrome(ChromeDriverManager().install(), options=chrome_options)
+        logging.info(f"Browser started with proxy: {proxy}")
+        return driver
+    except Exception as e:
+        logging.error(f"Failed to start browser: {e}")
+        return None
 
 # VirusTotal kaydolma işlemi
 def register_virustotal(driver, email, username, password):
-    driver.get("https://www.virustotal.com/gui/join-us")
-    logging.info("VirusTotal registration page opened.")
+    if driver is None:
+        logging.error("Browser driver is not available.")
+        return
 
-    # Formu doldur
-    email_input = driver.find_element(By.ID, "email")
-    email_input.send_keys(email)
-
-    username_input = driver.find_element(By.ID, "username")
-    username_input.send_keys(username)
-
-    password_input = driver.find_element(By.ID, "password")
-    password_input.send_keys(password)
-
-    # CAPTCHA çözen Buster eklentisini kullanarak CAPTCHA'yi çöz
     try:
-        buster_button = driver.find_element(By.XPATH, "//*[contains(@class, 'buster-captcha-solver')]")
-        buster_button.click()
-        logging.info("CAPTCHA solving initiated using Buster.")
-        time.sleep(10)  # CAPTCHA'nın çözülmesi için biraz bekleyelim
+        driver.get("https://www.virustotal.com/gui/join-us")
+        logging.info("VirusTotal registration page opened.")
+
+        # Formu doldur
+        email_input = driver.find_element(By.ID, "email")
+        email_input.send_keys(email)
+        logging.info(f"Email input: {email}")
+
+        username_input = driver.find_element(By.ID, "username")
+        username_input.send_keys(username)
+        logging.info(f"Username input: {username}")
+
+        password_input = driver.find_element(By.ID, "password")
+        password_input.send_keys(password)
+        logging.info(f"Password input: {password}")
+
+        # CAPTCHA çözen Buster eklentisini kullanarak CAPTCHA'yi çöz
+        try:
+            buster_button = driver.find_element(By.XPATH, "//*[contains(@class, 'buster-captcha-solver')]")
+            buster_button.click()
+            logging.info("CAPTCHA solving initiated using Buster.")
+            time.sleep(10)  # CAPTCHA'nın çözülmesi için biraz bekleyelim
+        except Exception as e:
+            logging.error(f"CAPTCHA solving failed: {e}")
+
+        # Formu gönder
+        submit_button = driver.find_element(By.ID, "submit")
+        submit_button.click()
+
+        # İşlemin sonucunu bekle ve logla
+        time.sleep(10)  # İşlemin tamamlanması için bekle
+        if "successful_registration_token" in driver.page_source:
+            logging.info("Successfully registered on VirusTotal.")
+        else:
+            logging.error("Registration failed.")
+
     except Exception as e:
-        logging.error(f"CAPTCHA solving failed: {e}")
-
-    # Formu gönder
-    submit_button = driver.find_element(By.ID, "submit")
-    submit_button.click()
-
-    # İşlemin sonucunu bekle ve logla
-    time.sleep(10)  # İşlemin tamamlanması için bekle
-    if "successful_registration_token" in driver.page_source:
-        logging.info("Successfully registered on VirusTotal.")
-    else:
-        logging.error("Registration failed.")
-    
-    driver.quit()
+        logging.error(f"Error during registration: {e}")
+    finally:
+        driver.quit()
 
 def main():
     # Proxy ve kullanıcı bilgilerini ayarla

@@ -1,7 +1,7 @@
 import logging
 from .virustotalbot_proxy import get_working_proxy
 from .virustotalbot_mail import get_temp_mail
-from .virustotal_registration import register_virustotal  # Düzeltme
+from .virustotal_registration import register_virustotal, start_browser_with_proxy  # start_browser_with_proxy de eklendi
 import json
 
 logging.basicConfig(filename='/vagrant/pythonapp.log', level=logging.DEBUG,
@@ -28,8 +28,20 @@ def test_virustotal_bot():
 
     # VirusTotal'a kayıt
     username, password = generate_random_credentials()  # Kayıt için kullanıcı bilgileri oluşturulmalı
-    driver = start_browser_with_proxy(proxy)
-    register_virustotal(driver, temp_email, username, password)  # register_and_get_api yerine bu kullanılır
+    logging.info(f"Generated credentials for VirusTotal: Username - {username}, Password - {password}")
+
+    try:
+        logging.info("Starting Selenium browser with proxy...")
+        driver = start_browser_with_proxy(proxy)
+        if driver:
+            logging.info("Selenium browser successfully started with proxy.")
+        else:
+            logging.error("Failed to start the Selenium browser. Exiting.")
+            return
+
+        register_virustotal(driver, temp_email, username, password)
+    except Exception as e:
+        logging.error(f"Failed to start Selenium or register on VirusTotal: {e}")
 
     logging.info("VirusTotalBot test completed successfully.")
     return "VirusTotalBot çalıştı, yeni API çekti."
