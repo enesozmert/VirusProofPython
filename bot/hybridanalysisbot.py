@@ -1,7 +1,10 @@
 import logging
+from denemeler.sinifsal import ConfigLogger
 
-logging.basicConfig(filename='/vagrant/pythonapp.log', level=logging.DEBUG,
-                    format='%(asctime)s %(levelname)s %(message)s')
+ConfigLogger.setup_logging()
+
+""" logging.basicConfig(filename='/vagrant/pythonapp.log', level=logging.DEBUG,
+                    format='%(asctime)s %(levelname)s %(message)s') """
 
 def test_hybrid_analysis_bot():
     logging.info("Testing HybridAnalysisBot...")

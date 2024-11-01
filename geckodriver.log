@@ -1,0 +1,171 @@
+1730204752882	geckodriver	INFO	Listening on 127.0.0.1:34357
+1730205541578	geckodriver	INFO	Listening on 127.0.0.1:56499
+1730205542132	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/usr ... te" "--remote-debugging-port" "43445" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofile7Wk6dX"
+Error: no DISPLAY environment variable specified
+1730205830265	geckodriver	INFO	Listening on 127.0.0.1:56907
+1730205830775	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/usr ... te" "--remote-debugging-port" "52347" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileLiItrF"
+Error: no DISPLAY environment variable specified
+1730206338119	geckodriver	INFO	Listening on 127.0.0.1:57297
+1730206338668	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/usr ... te" "--remote-debugging-port" "45611" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileR7RtfS"
+Error: no DISPLAY environment variable specified
+1730206428824	geckodriver	INFO	Listening on 127.0.0.1:37503
+1730206429463	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/usr ... ss" "--remote-debugging-port" "51503" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofile6lFoCh"
+*** You are running in headless mode.
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+[GFX1-]: glxtest: Unable to open a connection to the X server
+1730206430693	Marionette	INFO	Marionette enabled
+1730206431125	Marionette	INFO	Listening on port 39325
+Read port: 39325
+WebDriver BiDi listening on ws://127.0.0.1:51503
+1730206431423	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.error: ({})
+1730206435607	Marionette	INFO	Stopped listening on port 39325
+1730206849100	geckodriver	INFO	Listening on 127.0.0.1:38865
+1730206849641	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/usr ... te" "--remote-debugging-port" "46457" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileV01n61"
+Error: no DISPLAY environment variable specified
+1730207584583	geckodriver	INFO	Listening on 127.0.0.1:39147
+1730207585098	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/usr ... te" "--remote-debugging-port" "34283" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofilec2ES2d"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1730207586060	Marionette	INFO	Marionette enabled
+1730207586242	Marionette	INFO	Listening on port 42741
+WebDriver BiDi listening on ws://127.0.0.1:34283
+[Parent 4251, Main Thread] WARNING: Failed to create DBus proxy for org.a11y.Bus: Failed to execute child process “dbus-launch” (No such file or directory)
+: 'glib warning', file /build/firefox-CziccC/firefox-131.0.3+build1/toolkit/xre/nsSigHandlers.cpp:187
+
+** (firefox:4251): WARNING **: 13:13:06.317: Failed to create DBus proxy for org.a11y.Bus: Failed to execute child process “dbus-launch” (No such file or directory)
+
+Read port: 42741
+1730207586459	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.error: ({})
+1730207589512	Marionette	INFO	Stopped listening on port 42741
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+1730207924243	geckodriver	INFO	Listening on 127.0.0.1:32881
+1730207924774	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/usr ... te" "--remote-debugging-port" "52971" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileqpAHPx"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1730207925785	Marionette	INFO	Marionette enabled
+1730207926003	Marionette	INFO	Listening on port 43383
+Read port: 43383
+WebDriver BiDi listening on ws://127.0.0.1:52971
+[Parent 4799, Main Thread] WARNING: Failed to create DBus proxy for org.a11y.Bus: Failed to execute child process “dbus-launch” (No such file or directory)
+: 'glib warning', file /build/firefox-CziccC/firefox-131.0.3+build1/toolkit/xre/nsSigHandlers.cpp:187
+
+** (firefox:4799): WARNING **: 13:18:46.125: Failed to create DBus proxy for org.a11y.Bus: Failed to execute child process “dbus-launch” (No such file or directory)
+
+1730207926240	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.error: ({})
+1730208232144	Marionette	INFO	Stopped listening on port 43383
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+1730208486068	geckodriver	INFO	Listening on 127.0.0.1:36337
+1730208486589	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/usr ... te" "--remote-debugging-port" "40841" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofilebzVt3N"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1730208487569	Marionette	INFO	Marionette enabled
+1730208487818	Marionette	INFO	Listening on port 44615
+WebDriver BiDi listening on ws://127.0.0.1:40841
+[Parent 5462, Main Thread] WARNING: Failed to create DBus proxy for org.a11y.Bus: Failed to execute child process “dbus-launch” (No such file or directory)
+: 'glib warning', file /build/firefox-CziccC/firefox-131.0.3+build1/toolkit/xre/nsSigHandlers.cpp:187
+
+** (firefox:5462): WARNING **: 13:28:07.919: Failed to create DBus proxy for org.a11y.Bus: Failed to execute child process “dbus-launch” (No such file or directory)
+
+Read port: 44615
+1730208488042	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.error: ({})
+1730208501420	Marionette	INFO	Stopped listening on port 44615
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+1730208685242	geckodriver	INFO	Listening on 127.0.0.1:39003
+1730208685758	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/usr ... te" "--remote-debugging-port" "36637" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofilezrTFYu"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1730208686505	Marionette	INFO	Marionette enabled
+1730208686796	Marionette	INFO	Listening on port 35293
+WebDriver BiDi listening on ws://127.0.0.1:36637
+[Parent 5943, Main Thread] WARNING: Failed to create DBus proxy for org.a11y.Bus: Failed to execute child process “dbus-launch” (No such file or directory)
+: 'glib warning', file /build/firefox-CziccC/firefox-131.0.3+build1/toolkit/xre/nsSigHandlers.cpp:187
+
+** (firefox:5943): WARNING **: 13:31:26.852: Failed to create DBus proxy for org.a11y.Bus: Failed to execute child process “dbus-launch” (No such file or directory)
+
+Read port: 35293
+1730208687091	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.error: ({})
+1730208761778	Marionette	INFO	Stopped listening on port 35293
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+1730209351363	geckodriver	INFO	Listening on 127.0.0.1:44713
+1730209351897	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/usr ... te" "--remote-debugging-port" "39307" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileMhr4jj"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1730209353247	Marionette	INFO	Marionette enabled
+1730209353532	Marionette	INFO	Listening on port 42401
+WebDriver BiDi listening on ws://127.0.0.1:39307
+[Parent 6699, Main Thread] WARNING: Failed to create DBus proxy for org.a11y.Bus: Failed to execute child process “dbus-launch” (No such file or directory)
+: 'glib warning', file /build/firefox-CziccC/firefox-131.0.3+build1/toolkit/xre/nsSigHandlers.cpp:187
+
+** (firefox:6699): WARNING **: 13:42:33.562: Failed to create DBus proxy for org.a11y.Bus: Failed to execute child process “dbus-launch” (No such file or directory)
+
+Read port: 42401
+1730209353777	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.error: ({})
+1730209362366	Marionette	INFO	Stopped listening on port 42401
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+1730210070955	geckodriver	INFO	Listening on 127.0.0.1:55787
+1730210071532	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/usr ... te" "--remote-debugging-port" "48831" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofile5Ipl73"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1730210072951	Marionette	INFO	Marionette enabled
+1730210073253	Marionette	INFO	Listening on port 40939
+WebDriver BiDi listening on ws://127.0.0.1:48831
+[Parent 7335, Main Thread] WARNING: Failed to create DBus proxy for org.a11y.Bus: Failed to execute child process “dbus-launch” (No such file or directory)
+: 'glib warning', file /build/firefox-CziccC/firefox-131.0.3+build1/toolkit/xre/nsSigHandlers.cpp:187
+
+** (firefox:7335): WARNING **: 13:54:33.287: Failed to create DBus proxy for org.a11y.Bus: Failed to execute child process “dbus-launch” (No such file or directory)
+
+Read port: 40939
+1730210073476	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.error: ({})
+1730210082843	Marionette	INFO	Stopped listening on port 40939
+JavaScript warning: https://www.googletagmanager.com/gtm.js?id=GTM-KT5KQLB, line 635: Script terminated by timeout at:
+d@https://www.googletagmanager.com/gtm.js?id=GTM-KT5KQLB:635:49
+
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+1730210766360	geckodriver	INFO	Listening on 127.0.0.1:32881
+1730210766887	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/usr ... te" "--remote-debugging-port" "52299" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileffyokN"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1730210768014	Marionette	INFO	Marionette enabled
+1730210768333	Marionette	INFO	Listening on port 33701
+Read port: 33701
+WebDriver BiDi listening on ws://127.0.0.1:52299
+[Parent 8374, Main Thread] WARNING: Failed to create DBus proxy for org.a11y.Bus: Failed to execute child process “dbus-launch” (No such file or directory)
+: 'glib warning', file /build/firefox-CziccC/firefox-131.0.3+build1/toolkit/xre/nsSigHandlers.cpp:187
+
+** (firefox:8374): WARNING **: 14:06:08.455: Failed to create DBus proxy for org.a11y.Bus: Failed to execute child process “dbus-launch” (No such file or directory)
+
+1730210768579	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.error: ({})
+1730210783746	Marionette	INFO	Stopped listening on port 33701
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+1730210984110	geckodriver	INFO	Listening on 127.0.0.1:36151
+1730210984675	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/usr ... te" "--remote-debugging-port" "44583" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileXmhP8N"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1730210985618	Marionette	INFO	Marionette enabled
+1730210985835	Marionette	INFO	Listening on port 42557
+WebDriver BiDi listening on ws://127.0.0.1:44583
+[Parent 8877, Main Thread] WARNING: Failed to create DBus proxy for org.a11y.Bus: Failed to execute child process “dbus-launch” (No such file or directory)
+: 'glib warning', file /build/firefox-CziccC/firefox-131.0.3+build1/toolkit/xre/nsSigHandlers.cpp:187
+
+** (firefox:8877): WARNING **: 14:09:45.893: Failed to create DBus proxy for org.a11y.Bus: Failed to execute child process “dbus-launch” (No such file or directory)
+
+Read port: 42557
+1730210986051	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.error: ({})
+1730210989821	Marionette	INFO	Stopped listening on port 42557
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.error: services.settings: 
+  main/tracking-protection-lists Signature failed  Error: Shutdown, aborting read-only worker requests.
+console.error: (new Error("Shutdown, aborting read-only worker requests.", "resource://services-settings/RemoteSettingsWorker.sys.mjs", 131))
+console.error: (new Error("IndexedDB: main/fingerprinting-protection-overrides list() IndexedDB:  execute() The application is shutting down", "resource://services-settings/IDBHelpers.sys.mjs", 16))
+console.error: (new Error("IndexedDB: main/query-stripping list() IndexedDB:  execute() The application is shutting down", "resource://services-settings/IDBHelpers.sys.mjs", 16))
