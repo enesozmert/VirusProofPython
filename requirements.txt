@@ -7,3 +7,4 @@ Flask-Cors==3.0.10
 selenium==4.1.0
 webdriver-manager==3.5.2
 pyvirtualdisplay==3.0
+pyautogui==0.9.53

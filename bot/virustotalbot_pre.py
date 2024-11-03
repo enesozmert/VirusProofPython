@@ -1,83 +1,86 @@
-import os
-from pyvirtualdisplay import Display
 import logging
-import requests
-from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
-from denemeler.sinifsal import ConfigLogger
 import time
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.common.keys import Keys
+from webdriver_manager.chrome import ChromeDriverManager
+from .virustotalbot_kayit import pazubandi
+#LOG AYARI BU DOKUNMA
+logging.basicConfig(filename='/vagrant/pythonapp.log', level=logging.DEBUG,
+                    format='%(asctime)s %(levelname)s %(message)s')
 
-ConfigLogger.setup_logging()
+# Buster eklentisi URL'si
+EXTENSION_URL = 'https://chromewebstore.google.com/detail/buster-captcha-solver-for/mpbjkejclgfgadiemmefgebjfooflfhl'
 
-# Buster eklentisi URL'si ve dosya yolu
-BUSTER_CRX_URL = "https://clients2.googleusercontent.com/crx/blobs/AYA8VyxEiP6QUxtESKBqDwyJocAveA3nOpTEfTQd4Is80TdyKuDKdO6QWrJ8MC2QcE9rYVoHcIXauZyjlNeE7j3EJ4Z93VgK75un1s8iMgu4hJNWZX9QBstVuJMssWEUnkwAxlKa5SaPc_j8w0lrCZKpwMUuwA9V0mef/MPBJKEJCLGFGADIEMMEFGEBJFOOFLFHL_3_1_0_0.crx"
-BUSTER_PATH = "/vagrant/buster_captcha_solver_for_humans.crx"
-
-# Buster eklentisini indir
-def download_buster_extension():
+def setup_chrome_driver():
     try:
-        logging.info("Buster eklentisi indiriliyor...")
-        response = requests.get(BUSTER_CRX_URL, stream=True)
-        if response.status_code == 200:
-            with open(BUSTER_PATH, 'wb') as f:
-                f.write(response.content)
-            logging.info("Buster eklentisi başarıyla indirildi.")
-            return True
-        else:
-            logging.error(f"Buster eklentisi indirilemedi. Status Code: {response.status_code}")
-            return False
-    except Exception as e:
-        logging.error(f"Buster eklentisi indirme hatası: {e}")
-        return False
-
-# Tarayıcıyı başlatma ve Buster eklentisinin yüklendiğini doğrulama
-def start_chrome():
-    try:
-        display = Display(visible=0, size=(1024, 768))
-        display.start()
-        
-        chrome_options = Options()
-        chrome_options.add_extension(BUSTER_PATH)  # Eklentiyi ekleme
+        # Chrome ayarlarını başlat
+        chrome_options = webdriver.ChromeOptions()
         chrome_options.add_argument("--no-sandbox")
         chrome_options.add_argument("--disable-dev-shm-usage")
         chrome_options.add_argument("--disable-software-rasterizer")
-        chrome_options.add_argument("--remote-debugging-port=9222")
+        # chrome_options.add_argument("--remote-debugging-port=9222")
+        # chrome_options.add_argument("--disable-gpu")
+        # chrome_options.add_argument("--headless")  # Gerekirse headless modu ekleyin
 
-        driver = webdriver.Chrome(options=chrome_options)
-        logging.info("Chrome tarayıcısı başarıyla başlatıldı.")
+        # ChromeDriver ile tarayıcıyı başlat
+        logging.info("Chrome tarayıcısı başlatılmaya çalışılıyor...")
+        try:
+            service = Service(ChromeDriverManager().install())
+            driver = webdriver.Chrome(service=service, options=chrome_options)
+            logging.info("Chrome tarayıcısı başarıyla başlatıldı.")
+        except Exception as e:
+            logging.error(f"Chrome tarayıcısı başlatılamadı: {e}")
+            return None
 
-        # Eklentinin gerçekten yüklendiğini doğrulama
-        driver.get("chrome://extensions/")
-        time.sleep(2)  # Sayfanın yüklenmesini bekle
-        is_buster_loaded = driver.execute_script(
-            "return document.body.innerText.includes('Buster')"
-        )
-        
-        if is_buster_loaded:
-            logging.info("Buster eklentisi başarıyla yüklendi ve aktif.")
-        else:
-            logging.warning("Buster eklentisi yüklenemedi veya aktif değil. CAPTCHA çözümleri başarısız olabilir.")
-        
-        return driver, display
+        return driver
     except Exception as e:
-        logging.error(f"Tarayıcı başlatılamadı: {e}")
-        return None, None
+        logging.error(f"Tarayıcı ayarları yapılandırılamadı: {e}")
+        return None
 
-# Ana işlev
-def main():
-    # 1. Buster eklentisini indir
-    if not download_buster_extension():
-        logging.error("Buster eklentisi indirilemedi, işlem durduruluyor.")
-        exit()
+def install_buster_extension(driver):
+    try:
+        # Buster eklentisi sayfasına git
+        logging.info("Buster eklentisi sayfasına gidiliyor...")
+        driver.get(EXTENSION_URL)
+        time.sleep(5)  # Sayfanın yüklenmesini bekleyin
 
-    # 2. Tarayıcı başlat ve Buster eklentisini doğrula
-    driver, display = start_chrome()
+        # "Chrome'a Ekle" butonunu bul ve tıkla
+        try:
+            add_to_chrome_button = driver.find_element(By.CSS_SELECTOR, "div[role='button'][aria-label*='Chrome']")
+            add_to_chrome_button.click()
+            logging.info("'Chrome'a Ekle' butonuna tıklandı.")
+            time.sleep(2)  # İşlemin başlaması için bekleyin
+
+            # Onay penceresinde "Eklenti Ekle" butonuna basmak için
+            actions = ActionChains(driver)
+            actions.send_keys(Keys.TAB).send_keys(Keys.TAB).send_keys(Keys.ENTER).perform()
+            logging.info("'Eklenti Ekle' onaylandı.")
+            time.sleep(5)  # Eklentinin yüklenmesini bekleyin
+
+            logging.info("Buster eklentisi başarıyla yüklendi.")
+        except Exception as e:
+            logging.error(f"'Chrome'a Ekle' butonuna tıklanamadı veya eklenti yüklenemedi: {e}")
+            return False
+
+        return True
+    except Exception as e:
+        logging.error(f"Buster eklentisi yüklenirken hata oluştu: {e}")
+        return False
+
+def main(proxy):
+    driver = setup_chrome_driver()
     if driver:
-        logging.info("Tarayıcı ve Buster eklentisi doğrulandı, işlemler devam edebilir.")
+        if install_buster_extension(driver):
+            logging.info("Eklenti başarıyla yüklendi, işlemler devam edebilir.")
+            pazubandi(proxy)
+        else:
+            logging.error("Eklenti yüklenemedi.")
         driver.quit()
-        display.stop()
     else:
-        logging.error("Tarayıcı başlatılamadı veya Buster eklentisi yüklenemedi.")
+        logging.error("Tarayıcı başlatılamadı.")
 
 if __name__ == "__main__":
     main()

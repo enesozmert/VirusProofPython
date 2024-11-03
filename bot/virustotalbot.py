@@ -17,12 +17,11 @@ def test_virustotal_bot():
     proxy = get_working_proxy()
     if proxy:
         logging.info(f"Using proxy: {proxy}")
+        prebrowser(proxy) #PREBROWSER KISMIna geç
     else:
         logging.error("No working proxy available. Exiting.")
         return
-    # VirusTotal'a kayıt
-    prebrowser()
-
+   
 if __name__ == "__main__":
     test_virustotal_bot()
 
