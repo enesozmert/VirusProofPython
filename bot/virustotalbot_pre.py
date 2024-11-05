@@ -14,14 +14,18 @@ logging.basicConfig(filename='/vagrant/pythonapp.log', level=logging.DEBUG,
 # Buster eklentisi URL'si
 EXTENSION_URL = 'https://chromewebstore.google.com/detail/buster-captcha-solver-for/mpbjkejclgfgadiemmefgebjfooflfhl'
 
+
+#pip3 install webdriver-manager --upgrade ile webdriver sürümünü güncellemek gerekiyor.
+
+
 def setup_chrome_driver():
     try:
         # Chrome ayarlarını başlat
-        chrome_options = webdriver.ChromeOptions()
+        chrome_options = webdriver.ChromeOptions() 
         chrome_options.add_argument("--no-sandbox")
         chrome_options.add_argument("--disable-dev-shm-usage")
         chrome_options.add_argument("--disable-software-rasterizer")
-        # chrome_options.add_argument("--remote-debugging-port=9222")
+        chrome_options.add_argument("--remote-debugging-port=9222")
         # chrome_options.add_argument("--disable-gpu")
         # chrome_options.add_argument("--headless")  # Gerekirse headless modu ekleyin
 
