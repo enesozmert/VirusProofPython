@@ -5,74 +5,97 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 
 ConfigLogger.setup_logging()
 
-""" logging.basicConfig(filename='/vagrant/pythonapp.log', level=logging.DEBUG,
-                    format='%(asctime)s %(levelname)s %(message)s') """
+# Başarısız proxyleri hafızada tut
+failed_proxies = set()
 
 # Proxy sağlayıcısından dinamik liste alalım
-# Proxy listesini çek
 def fetch_proxies():
     logging.info("Fetching proxies from the provider...")
     try:
-        response = requests.get("https://raw.githubusercontent.com/monosans/proxy-list/refs/heads/main/proxies.json")
+        response = requests.get(
+            "https://raw.githubusercontent.com/monosans/proxy-list/refs/heads/main/proxies.json"
+        )
         response.raise_for_status()
         proxies_data = response.json()
-        proxies = [f"http://{proxy['host']}:{proxy['port']}" for proxy in proxies_data if proxy['protocol'] == 'http']
+        proxies = [
+            f"http://{proxy['host']}:{proxy['port']}"
+            for proxy in proxies_data
+            if proxy["protocol"] == "http"
+        ]
         logging.info(f"Fetched {len(proxies)} HTTP proxies.")
         return proxies
     except requests.RequestException as e:
         logging.error(f"Failed to fetch proxies: {e}")
         return []
 
-# Proxy'nin çalışıp çalışmadığını test et
+# Proxy'nin çalışıp çalışmadığını test eden fonksiyon
 def test_proxy(proxy):
-    try:
-        response = requests.get("http://ipinfo.io", proxies={"http": proxy, "https": proxy}, timeout=10)
-        if response.status_code == 200:
-            return True
-    except requests.RequestException:
-        pass
-    return False
+    if proxy in failed_proxies:
+        logging.info(f"Skipping previously failed proxy: {proxy}")
+        return False
 
-# İlk çalışan proxy'yi bul
+    try:
+        # Google reCAPTCHA API'ye erişimi kontrol et
+        recaptcha_response = requests.get(
+            "https://www.google.com/recaptcha/api/siteverify",
+            proxies={"http": proxy, "https": proxy},
+            timeout=10,
+        )
+        if recaptcha_response.status_code != 200:
+            failed_proxies.add(proxy)
+            logging.info(f"Proxy failed on Google reCAPTCHA check: {proxy}")
+            return False
+
+        # VirusTotal'e erişimi kontrol et
+        virustotal_response = requests.get(
+            "https://www.virustotal.com",
+            proxies={"http": proxy, "https": proxy},
+            timeout=10,
+        )
+        if virustotal_response.status_code == 200:
+            logging.info(f"Working proxy found: {proxy}")
+            return True
+        else:
+            failed_proxies.add(proxy)
+            logging.info(f"Proxy failed on VirusTotal: {proxy}")
+            return False
+    except requests.RequestException:
+        failed_proxies.add(proxy)
+        logging.info(f"RequestException for proxy: {proxy}")
+        return False
+
+# Çalışan ilk proxy'yi bul
 def get_working_proxy():
     proxy_list = fetch_proxies()
     if not proxy_list:
         logging.error("No proxies available.")
         return None
 
-    logging.info("Testing proxies in batches of 10.")
-    # 10'lu gruplar halinde proxy denemesi yapalım
-    for i in range(0, len(proxy_list), 10):
-        batch = proxy_list[i:i + 10]
-        logging.info(f"Testing batch: {batch}")
-        
-        with ThreadPoolExecutor(max_workers=10) as executor:
-            future_to_proxy = {executor.submit(test_proxy, proxy): proxy for proxy in batch}
-            
+    logging.info("Testing proxies in batches of 50.")
+    for i in range(0, len(proxy_list), 50):
+        batch = [proxy for proxy in proxy_list[i:i + 50] if proxy not in failed_proxies]
+        logging.info(f"Testing batch of {len(batch)} proxies.")
+
+        with ThreadPoolExecutor(max_workers=50) as executor:
+            future_to_proxy = {
+                executor.submit(test_proxy, proxy): proxy for proxy in batch
+            }
+
             for future in as_completed(future_to_proxy):
                 proxy = future_to_proxy[future]
                 try:
                     if future.result():  # Eğer proxy başarılıysa
-                        logging.info(f"Working proxy found: {proxy}")
+                        logging.info(f"Working proxy selected: {proxy}")
                         return proxy
-                    else:
-                        logging.warning(f"Proxy failed: {proxy}")
                 except Exception as e:
                     logging.warning(f"Error testing proxy {proxy}: {e}")
 
     logging.error("No working proxy found in any batch.")
     return None
 
-# Proxy'nin çalışıp çalışmadığını kontrol eden fonksiyon
-def test_proxy(proxy):
-    try:
-        response = requests.get("http://ipinfo.io", proxies={"http": proxy, "https": proxy}, timeout=10)
-        if response.status_code == 200:
-            logging.info(f"Proxy worked! {response.json()}")
-            return True
-        else:
-            logging.error(f"Proxy failed with status code: {response.status_code}")
-            return False
-    except Exception as e:
-        logging.error(f"Proxy failed: {e}")
-        return False
+if __name__ == "__main__":
+    selected_proxy = get_working_proxy()
+    if selected_proxy:
+        logging.info(f"Selected proxy for usage: {selected_proxy}")
+    else:
+        logging.error("No proxy could be selected.")

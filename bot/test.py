@@ -18,9 +18,10 @@ options.add_argument("--disable-dev-shm-usage")
 logging.info("Buraya geldik")
 
 try:
-    service = Service(ChromeDriverManager().install())
+    service = Service("/usr/local/bin/chromedriver",)
     driver = webdriver.Chrome(service=service, options=options)
     driver.get("https://www.google.com")
+
     # search_box = driver.find_element(By.NAME, "q")
     # search_box.send_keys("Selenium WebDriver")
     # search_box.send_keys(Keys.RETURN)

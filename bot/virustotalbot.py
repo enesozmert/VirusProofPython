@@ -21,9 +21,8 @@ def test_virustotal_bot():
     else:
         logging.error("No working proxy available. Exiting.")
         return
-   
-if __name__ == "__main__":
-    test_virustotal_bot()
+# if __name__ == "__main__":
+#     test_virustotal_bot()
 
     # Python'da if __name__ == "__main__": bloğu, bir Python dosyasının doğrudan çalıştırıldığında belirli bir kodun çalıştırılmasını sağlar.
     # Bu blok içindeki kod, dosya doğrudan çalıştırıldığında çalışır, ancak dosya bir modül olarak içe aktarıldığında çalışmaz.
