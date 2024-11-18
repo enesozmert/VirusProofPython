@@ -1,3 +1,5 @@
+import os
+import sys
 import logging
 import random
 import string
@@ -12,7 +14,9 @@ from denemeler.sinifsal import ConfigLogger
 from selenium.webdriver.chrome.service import Service
 from selenium_stealth import stealth
 from selenium.webdriver.common.action_chains import ActionChains
+from twocaptcha import TwoCaptcha
 
+API_KEY = "db51f06614c7f33511fdf0f89428ea24"
 
 ConfigLogger.setup_logging()
 
@@ -79,221 +83,95 @@ def pazubandi(proxy):
     logging.info("VirusTotal kayıt sayfasına gidildi.")
     time.sleep(10)
 
+
+
+######################################333
     try:
-        wait = WebDriverWait(driver, 20)
-        wait.until(
-            EC.presence_of_element_located((By.XPATH, '//*[@id="firstName"]'))
-        ).send_keys(first_name)
-        wait.until(
-            EC.presence_of_element_located((By.XPATH, '//*[@id="lastName"]'))
-        ).send_keys(last_name)
-        wait.until(
-            EC.presence_of_element_located((By.XPATH, '//*[@id="email"]'))
-        ).send_keys(email)
-        wait.until(
-            EC.presence_of_element_located((By.XPATH, '//*[@id="userId"]'))
-        ).send_keys(username)
+            logging.info("2Captcha çözüm işlemi başlatılıyor.")
+            solver = TwoCaptcha(API_KEY)
 
-        password_field = wait.until(
-            EC.presence_of_element_located((By.XPATH, '//*[@id="password"]'))
-        )
-        password_field.send_keys(password)
+            # reCAPTCHA çözüm işlemi
+            try:
+                result = solver.recaptcha(
+                    sitekey="6Ldjgd0kAAAAAITm7ipWF7o7kPL_81SaSfdINiOc",  # reCAPTCHA site anahtarı
+                    url='https://2captcha.com/demo/recaptcha-v3',
+                    version='v3',
+                    action='register',
+                    score='0.9'
+                )
 
-        logging.info("Buraya geldi")
-        logging.warning("SSL certificate error")
+                # reCAPTCHA çözüm kodunu al
+                g_recaptcha_response = result.get("code")
+                if not g_recaptcha_response:
+                    logging.error("reCAPTCHA kodu alınamadı.")
+                    raise Exception("reCAPTCHA çözümü başarısız.")
+                logging.info(f"Alınan reCAPTCHA kodu: {g_recaptcha_response}")
 
-        time.sleep(0.5)
+            except Exception as e:
+                logging.error(f"2Captcha çözümü sırasında hata oluştu: {e}")
+                raise e
 
-        password_repeat_field = wait.until(
-            EC.presence_of_element_located((By.XPATH, '//*[@id="passwordRepeat"]'))
-        )
-        password_repeat_field.send_keys(password)
+            # Form doldurma işlemi
+            try:
+                wait = WebDriverWait(driver, 20)
+                wait.until(EC.presence_of_element_located((By.XPATH, '//*[@id="firstName"]'))).send_keys(first_name)
+                wait.until(EC.presence_of_element_located((By.XPATH, '//*[@id="lastName"]'))).send_keys(last_name)
+                wait.until(EC.presence_of_element_located((By.XPATH, '//*[@id="email"]'))).send_keys(email)
+                wait.until(EC.presence_of_element_located((By.XPATH, '//*[@id="userId"]'))).send_keys(username)
 
-        tos_checkbox = wait.until(
-            EC.element_to_be_clickable((By.XPATH, '//*[@id="tosCheckbox"]'))
-        )
-        driver.execute_script("arguments[0].scrollIntoView(true);", tos_checkbox)
-        time.sleep(0.5)
-        tos_checkbox.click()
-        logging.info("Terms of Service kutucuğu işaretlendi.")
-        time.sleep(9)
-        # "Join us" butonuna tıkla
-        # submit_button = wait.until(
-        #     EC.element_to_be_clickable((By.XPATH, '//*[@id="submit"]'))
-        # )
-        # driver.execute_script("arguments[0].scrollIntoView(true);", submit_button)
-        # time.sleep(1)
-        # driver.execute_script("arguments[0].click();", submit_button)
-        # logging.info("Kayıt butonuna tıklandı.")
+                password_field = wait.until(EC.presence_of_element_located((By.XPATH, '//*[@id="password"]')))
+                password_field.send_keys(password)
+                logging.info("Form bilgileri başarıyla dolduruldu.")
+                time.sleep(0.5)
 
-        # 4 saniye bekle ve CAPTCHA alanını kontrol et
-        time.sleep(7)
+                password_repeat_field = wait.until(EC.presence_of_element_located((By.XPATH, '//*[@id="passwordRepeat"]')))
+                password_repeat_field.send_keys(password)
 
-        # CAPTCHA manuel kontrol ve tıklama işlemi
-        #
-        # ***************
+                tos_checkbox = wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="tosCheckbox"]')))
+                driver.execute_script("arguments[0].scrollIntoView(true);", tos_checkbox)
+                time.sleep(0.5)
+                tos_checkbox.click()
+                logging.info("Terms of Service kutucuğu işaretlendi.")
 
-API_KEY = "db51f06614c7f33511fdf0f89428ea24"
-WEBSITE_URL = "https://2captcha.com/demo/recaptcha-v3"
-SITE_KEY = "6LfB5_IbAAAAAMCtsjEHEHKqcB9iQocwwxTiihJu"
-MIN_SCORE = 0.9
-PAGE_ACTION = "test"
+                # reCAPTCHA iframe'ine geçiş yap
+                captcha_iframe = wait.until(EC.presence_of_element_located((By.XPATH, "//iframe[contains(@title, 'recaptcha')]")))
+                driver.switch_to.frame(captcha_iframe)
+                logging.info("reCAPTCHA iframe'ine geçildi.")
 
-    # reCAPTCHA çözme görevini başlat
-    def create_captcha_task():
-        url = "https://api.2captcha.com/createTask"
-        payload = {
-            "clientKey": API_KEY,
-            "task": {
-                "type": "RecaptchaV3TaskProxyless",
-                "websiteURL": WEBSITE_URL,
-                "websiteKey": SITE_KEY,
-                "minScore": MIN_SCORE,
-                "pageAction": PAGE_ACTION,
-                "isEnterprise": False,
-                "apiDomain": "recaptcha.net"
-            }
-        }
-        response = requests.post(url, json=payload)
-        result = response.json()
+                # reCAPTCHA çözümünü forma ekle
+                driver.execute_script("document.getElementById('g-recaptcha-response').style.display = 'block';")
+                driver.execute_script(f"document.getElementById('g-recaptcha-response').innerHTML='{g_recaptcha_response}';")
+                logging.info("reCAPTCHA çözümü forma başarıyla eklendi.")
 
-        if result.get("errorId") == 0:
-            task_id = result.get("taskId")
-            logging.info(f"reCAPTCHA çözme görevi oluşturuldu, Task ID: {task_id}")
-            return task_id
-        else:
-            logging.error(f"reCAPTCHA çözme görevi oluşturulamadı: {result.get('errorDescription')}")
-            return None
+                # Ana çerçeveye geri dön
+                driver.switch_to.default_content()
 
-    # Görevin tamamlanmasını ve çözümü almayı bekler
-    def get_captcha_solution(task_id):
-        url = "https://api.2captcha.com/getTaskResult"
-        payload = {
-            "clientKey": API_KEY,
-            "taskId": task_id
-        }
+                # "Join us" butonuna tıkla
+                time.sleep(7000)
+                submit_button = wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="submit"]')))
+                driver.execute_script("arguments[0].scrollIntoView(true);", submit_button)
+                time.sleep(1)
+                driver.execute_script("arguments[0].click();", submit_button)
+                logging.info("Kayıt butonuna tıklandı.")
 
-        while True:
-            response = requests.post(url, json=payload)
-            result = response.json()
+                # Başarı kontrolü
+                time.sleep(5)
+                page_source = driver.page_source
 
-            if result.get("errorId") == 0:
-                if result.get("status") == "ready":
-                    g_recaptcha_response = result["solution"]["gRecaptchaResponse"]
-                    logging.info("reCAPTCHA çözümü alındı.")
-                    return g_recaptcha_response
+                if "Signed up successfully" in page_source:
+                    logging.info("Kayıt işlemi başarılı!")
+                    driver.save_screenshot("success_screenshot.png")
                 else:
-                    logging.info("reCAPTCHA çözümü bekleniyor...")
-                    time.sleep(5)
-            else:
-                logging.error(f"reCAPTCHA çözümleme sırasında hata: {result.get('errorDescription')}")
-                return None
+                    logging.error("Kayıt işlemi başarısız oldu.")
+                    driver.save_screenshot("error_screenshot.png")
 
-    # reCAPTCHA çözme işlemini başlat ve sonucu al
-    def solve_recaptcha():
-        task_id = create_captcha_task()
-        if task_id:
-            solution = get_captcha_solution(task_id)
-            if solution:
-                logging.info(f"reCAPTCHA Çözümü: {solution}")
-                return solution
-            else:
-                logging.error("reCAPTCHA çözümü alınamadı.")
-                return None
-        else:
-            logging.error("Görev oluşturulamadı.")
-            return None
+            except Exception as e:
+                logging.error(f"Form doldurma veya gönderimi sırasında hata oluştu: {e}")
+                driver.save_screenshot("error_screenshot_full.png")
 
-    # Tarayıcı işlemleri
-    def perform_signup(driver, username, password, email, first_name, last_name):
-        try:
-            wait = WebDriverWait(driver, 30)
-
-            # "Join us" butonuna tıklama
-            submit_button = wait.until(
-                EC.element_to_be_clickable((By.XPATH, '//*[@id="submit"]'))
-            )
-            driver.execute_script("arguments[0].scrollIntoView(true);", submit_button)
-            time.sleep(random.uniform(1, 3))
-            driver.execute_script("arguments[0].click();", submit_button)
-            logging.info("Kayıt butonuna tıklandı.")
-
-            # İlk reCAPTCHA çözme denemesi
-            def solve_and_submit():
-                g_recaptcha_response = solve_recaptcha()
-                if g_recaptcha_response:
-                    driver.execute_script(
-                        "document.getElementById('g-recaptcha-response').style.display = 'block';"
-                    )
-                    driver.execute_script(
-                        f"document.getElementById('g-recaptcha-response').value='{g_recaptcha_response}';"
-                    )
-                    logging.info("reCAPTCHA çözümü g-recaptcha-response alanına manuel olarak yerleştirildi.")
-
-                    # reCAPTCHA checkbox'ını tıkla ve userverify isteğini gönder
-                    iframe = driver.find_element(By.XPATH, "//iframe[contains(@src, 'recaptcha')]")
-                    driver.switch_to.frame(iframe)
-                    checkbox = driver.find_element(By.ID, "recaptcha-anchor")
-                    driver.execute_script("arguments[0].click();", checkbox)
-                    driver.switch_to.default_content()
-                    
-                    time.sleep(random.uniform(3, 5))
-
-                    # userverify isteği
-                    driver.execute_script(f"""
-                        fetch('https://recaptcha.net/recaptcha/api2/userverify?k=6LfB5_IbAAAAAMCtsjEHEHKqcB9iQocwwxTiihJu', {{
-                            method: 'POST',
-                            headers: {{
-                                'Content-Type': 'application/x-www-form-urlencoded'
-                            }},
-                            body: 'response={g_recaptcha_response}'
-                        }}).then(response => console.log('userverify sonucu:', response));
-                    """)
-
-                    # signup isteği
-                    driver.execute_script(f"""
-                        fetch('/signup', {{
-                            method: 'POST',
-                            headers: {{
-                                'Content-Type': 'application/x-www-form-urlencoded'
-                            }},
-                            body: 'username={username}&password={password}&email={email}&first_name={first_name}&last_name={last_name}'
-                        }}).then(response => console.log('signup sonucu:', response));
-                    """)
-                    logging.info("signup isteği gönderildi.")
-                else:
-                    logging.error("reCAPTCHA çözümü alınamadı.")
-                    return False
-                return True
-
-            # İlk çözüm denemesi
-            if not solve_and_submit():
-                logging.error("İlk reCAPTCHA çözüm başarısız oldu.")
-
-            # Başarı durumunu kontrol et ve ekran görüntüsü al
-            time.sleep(random.uniform(3, 5))
-            page_source = driver.page_source
-            if "Signed up successfully" in page_source:
-                logging.info("Kayıt başarılı, ekran görüntüsü alınıyor.")
-                driver.save_screenshot("/vagrant/success_screenshot.png")
-            else:
-                logging.error("Üyelik başarısız oldu, tekrar çözüm deneniyor.")
-                
-                # İkinci çözüm denemesi
-                if not solve_and_submit():
-                    logging.error("İkinci reCAPTCHA çözüm başarısız oldu, kayıt başarısız.")
-                else:
-                    page_source = driver.page_source
-                    if "Signed up successfully" in page_source:
-                        logging.info("Kayıt başarılı, ekran görüntüsü alınıyor.")
-                        driver.save_screenshot("/vagrant/success_screenshot.png")
-                    else:
-                        logging.error("Üyelik yine başarısız oldu, farklı bir çözüm arayın.")
-                        driver.save_screenshot("/vagrant/error_screenshot.png")
-
-        except Exception as e:
-            logging.error(f"Kayıt işlemi sırasında hata oluştu: {e}")
-            driver.save_screenshot("/vagrant/error_screenshot_full.png")
-        finally:
-            time.sleep(500)
+    except Exception as main_error:
+            logging.error(f"Bir hata oluştu: {main_error}")
+    finally:
+            # Tarayıcıyı kapatma işlemi
+            logging.info("Tarayıcı kapatılıyor.")
             driver.quit()
